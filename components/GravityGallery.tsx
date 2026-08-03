@@ -7,7 +7,7 @@ import { BoundingBox, getStrokesBoundingBox } from "@/lib/svgPath";
 
 const WALL_THICKNESS = 200;
 const HOVER_RADIUS = 160;
-const HOVER_FORCE = 0.0012;
+const HOVER_TAP_SPEED = 4.5; // one-off velocity kick when the cursor first brushes a card, at point-blank range
 const BBOX_PADDING = 16; // canvas units of margin around each drawing's ink
 const FILL_RATIO_CAP = 0.8; // once occupied footprint hits ~80% of the screen, retire the oldest pieces
 
@@ -52,6 +52,8 @@ export default function GravityGallery({ bottomInset = 0 }: GravityGalleryProps)
   const bottomInsetRef = useRef(bottomInset);
   const buildWallsRef = useRef<(() => void) | null>(null);
   const floorYRef = useRef(Infinity);
+  const pointerRef = useRef<{ x: number; y: number } | null>(null);
+  const tappedIdsRef = useRef<Set<string>>(new Set()); // ids currently inside the hover radius, already tapped
   const [cards, setCards] = useState<CardMeta[]>([]);
 
   useEffect(() => {
@@ -191,9 +193,81 @@ export default function GravityGallery({ bottomInset = 0 }: GravityGalleryProps)
     };
     Matter.Events.on(engine, "afterUpdate", onAfterUpdate);
 
+    // Mouse/touch drag-to-move, works for both desktop click-drag and
+    // mobile touch-drag out of the box via Matter's Mouse module.
+    //
+    // Note: no `mouse.pixelRatio` override here. Matter's Mouse divides the
+    // raw cursor offset by pixelRatio, which is meant for a <canvas> whose
+    // backing store is rendered at devicePixelRatio while displayed at CSS
+    // size. This gallery is plain DOM — body positions, walls, and the
+    // hover math all use getBoundingClientRect() CSS pixels 1:1 — so
+    // setting pixelRatio to devicePixelRatio (e.g. 2 on Retina) would halve
+    // the effective cursor position and break drag hit-testing everywhere
+    // outside the top-left quadrant. Matter's own default of 1 is correct.
+    const mouse = Matter.Mouse.create(container);
+    const mouseConstraint = Matter.MouseConstraint.create(engine, {
+      mouse,
+      constraint: { stiffness: 0.15, damping: 0.15, render: { visible: false } },
+    });
+    Matter.World.add(engine.world, mouseConstraint);
+
+    // Desktop-only passive hover: cards get a single light "tap" the
+    // instant the cursor brushes within HOVER_RADIUS, distinct from drag,
+    // which is a full grab-and-throw via the mouse constraint above.
+    // Evaluated once per physics substep (below), keyed off the latest
+    // known pointer position, rather than from the pointermove event
+    // itself, so it runs at a steady, fixed cadence instead of the
+    // browser's uneven pointermove timing.
+    //
+    // Two things make this read as a tap rather than a shove:
+    // - it's edge-triggered (tappedIdsRef), firing once per approach
+    //   instead of continuously for as long as the cursor stays close —
+    //   a continuous push has nowhere to stop, so it reads as the card
+    //   fleeing rather than a card getting nudged
+    // - it nudges velocity directly (Body.setVelocity) rather than calling
+    //   Body.applyForce: once a few cards are resting against each other,
+    //   the contact/friction resistance from neighbors needs real force to
+    //   overcome, and a small continuous *force* mostly gets absorbed by
+    //   that resistance — the card doesn't move at all, which is exactly
+    //   what made hover feel broken once the pile had more than one card.
+    //   Setting velocity directly doesn't need to "win" against friction,
+    //   it just is the card's velocity for the next step.
+    // The currently-dragged body is skipped so hover doesn't fight the
+    // drag constraint while you're holding a card near the cursor.
+    const applyHoverRepulsion = () => {
+      const pointer = pointerRef.current;
+      const tapped = tappedIdsRef.current;
+      if (!pointer) {
+        tapped.clear();
+        return;
+      }
+      bodiesRef.current.forEach((body, id) => {
+        if (body === mouseConstraint.body) {
+          tapped.delete(id);
+          return;
+        }
+        const dx = body.position.x - pointer.x;
+        const dy = body.position.y - pointer.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        const inRange = dist < HOVER_RADIUS && dist > 0.01;
+        if (!inRange) {
+          tapped.delete(id);
+          return;
+        }
+        if (tapped.has(id)) return;
+        tapped.add(id);
+        const strength = (1 - dist / HOVER_RADIUS) * HOVER_TAP_SPEED;
+        Matter.Body.setVelocity(body, {
+          x: body.velocity.x + (dx / dist) * strength,
+          y: body.velocity.y + (dy / dist) * strength,
+        });
+      });
+    };
+
     let physicsRafId = 0;
     const stepPhysics = () => {
       for (let i = 0; i < SUBSTEPS; i++) {
+        applyHoverRepulsion();
         Matter.Engine.update(engine, FIXED_DELTA);
       }
       physicsRafId = requestAnimationFrame(stepPhysics);
@@ -235,37 +309,18 @@ export default function GravityGallery({ bottomInset = 0 }: GravityGalleryProps)
     const onResize = () => buildWalls();
     window.addEventListener("resize", onResize);
 
-    // Mouse/touch drag-to-move, works for both desktop click-drag and
-    // mobile touch-drag out of the box via Matter's Mouse module.
-    const mouse = Matter.Mouse.create(container);
-    mouse.pixelRatio = window.devicePixelRatio || 1;
-    const mouseConstraint = Matter.MouseConstraint.create(engine, {
-      mouse,
-      constraint: { stiffness: 0.15, damping: 0.15, render: { visible: false } },
-    });
-    Matter.World.add(engine.world, mouseConstraint);
-
-    // Desktop-only passive hover repulsion: nearby cards drift away from
-    // the cursor as it moves, without needing a click/drag.
+    // Track the desktop cursor position; the repulsion force itself is
+    // applied per physics substep in stepPhysics (see applyHoverRepulsion).
     const onPointerMove = (e: PointerEvent) => {
       if (e.pointerType !== "mouse") return;
       const bounds = container.getBoundingClientRect();
-      const cx = e.clientX - bounds.left;
-      const cy = e.clientY - bounds.top;
-      bodiesRef.current.forEach((body) => {
-        const dx = body.position.x - cx;
-        const dy = body.position.y - cy;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < HOVER_RADIUS && dist > 0.01) {
-          const strength = (1 - dist / HOVER_RADIUS) * HOVER_FORCE;
-          Matter.Body.applyForce(body, body.position, {
-            x: (dx / dist) * strength,
-            y: (dy / dist) * strength,
-          });
-        }
-      });
+      pointerRef.current = { x: e.clientX - bounds.left, y: e.clientY - bounds.top };
+    };
+    const onPointerLeave = () => {
+      pointerRef.current = null;
     };
     container.addEventListener("pointermove", onPointerMove);
+    container.addEventListener("pointerleave", onPointerLeave);
 
     // Sync DOM transforms to physics bodies every frame without
     // triggering React re-renders.
@@ -308,6 +363,7 @@ export default function GravityGallery({ bottomInset = 0 }: GravityGalleryProps)
     return () => {
       window.removeEventListener("resize", onResize);
       container.removeEventListener("pointermove", onPointerMove);
+      container.removeEventListener("pointerleave", onPointerLeave);
       cancelAnimationFrame(rafRef.current);
       unsubscribe();
       Matter.Events.off(engine, "afterUpdate", onAfterUpdate);
