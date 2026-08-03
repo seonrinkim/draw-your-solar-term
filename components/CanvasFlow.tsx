@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { SolarTerm } from "@/lib/terms";
 import { StrokePath, submitDrawing } from "@/lib/drawings";
 import { CANVAS_WIDTH, CANVAS_HEIGHT } from "@/lib/canvas";
+import { mirrorToGoogle } from "@/lib/mirror";
 import DrawingCanvas from "@/components/DrawingCanvas";
 
 type Step = "draw" | "submit";
@@ -65,6 +66,12 @@ export default function CanvasFlow({ term }: { term: SolarTerm }) {
         nickname: nickname.trim(),
         note: note.trim(),
         consent: true,
+      });
+      mirrorToGoogle({
+        term,
+        strokes,
+        nickname: nickname.trim(),
+        note: note.trim(),
       });
       router.push("/");
     } catch {
