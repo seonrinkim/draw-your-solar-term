@@ -45,7 +45,7 @@ export default function TermDetail({ term }: { term: SolarTerm }) {
         <p className="text-sm sm:text-base leading-relaxed opacity-80 mb-8">
           {t.drawPromptPrefix}
           <strong>
-            {term.hangul} · {term.english}
+            {term.hangul} {term.romanized}
           </strong>
           {t.drawPromptSuffix}
         </p>
