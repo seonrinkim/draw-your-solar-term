@@ -11,7 +11,7 @@ const LANGUAGE_LABELS: Record<Language, string> = {
   nl: "NL",
 };
 
-const FOOTER_GAP = 12; // breathing room between the drawing pile and the footer text
+const FOOTER_GAP = 4; // breathing room between the drawing pile and the footer text
 
 export default function Home() {
   const { language, setLanguage } = useLanguage();

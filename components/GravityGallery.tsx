@@ -3,17 +3,12 @@
 import { useEffect, useRef, useState, useCallback } from "react";
 import Matter from "matter-js";
 import { DrawingRecord, fetchDrawings, subscribeToNewDrawings } from "@/lib/drawings";
-import {
-  BoundingBox,
-  compositeQuadCentroid,
-  getSegmentQuads,
-  getStrokesPoints,
-} from "@/lib/svgPath";
+import { BoundingBox, getStrokesBoundingBox } from "@/lib/svgPath";
 
 const WALL_THICKNESS = 200;
 const HOVER_RADIUS = 160;
 const HOVER_FORCE = 0.0012;
-const QUAD_PADDING = 12; // canvas units of grabbable margin around each thin line segment
+const BBOX_PADDING = 16; // canvas units of margin around each drawing's ink
 const FILL_RATIO_CAP = 0.8; // once occupied footprint hits ~80% of the screen, retire the oldest pieces
 
 // Map a stroke's bounding-box longest side (in canvas units) to an
@@ -50,11 +45,13 @@ export default function GravityGallery({ bottomInset = 0 }: GravityGalleryProps)
   const engineRef = useRef<Matter.Engine | null>(null);
   const bodiesRef = useRef<Map<string, Matter.Body>>(new Map());
   const elementsRef = useRef<Map<string, HTMLDivElement>>(new Map());
+  const sizesRef = useRef<Map<string, { width: number; height: number }>>(new Map());
   const wallsRef = useRef<Matter.Body[]>([]);
   const orderRef = useRef<string[]>([]); // insertion order, oldest first
   const occupiedAreaRef = useRef(0);
   const bottomInsetRef = useRef(bottomInset);
   const buildWallsRef = useRef<(() => void) | null>(null);
+  const floorYRef = useRef(Infinity);
   const [cards, setCards] = useState<CardMeta[]>([]);
 
   useEffect(() => {
@@ -72,6 +69,7 @@ export default function GravityGallery({ bottomInset = 0 }: GravityGalleryProps)
     }
     bodiesRef.current.delete(id);
     elementsRef.current.delete(id);
+    sizesRef.current.delete(id);
     setCards((prev) => prev.filter((c) => c.id !== id));
   }, []);
 
@@ -82,72 +80,35 @@ export default function GravityGallery({ bottomInset = 0 }: GravityGalleryProps)
       if (!engine || !container) return;
       if (bodiesRef.current.has(drawing.id)) return;
 
-      // Thin rectangles along each drawn segment (compound parts), so
-      // collision follows the actual line instead of a bounding box.
-      const quads = getSegmentQuads(drawing.svg_paths, QUAD_PADDING);
-      const rawPoints = getStrokesPoints(drawing.svg_paths);
-
-      // Matter.js places a compound body so that the *area-weighted centroid
-      // of its parts* lands at body.position — not any bounding-box center.
-      // Anchoring our render box on that same centroid keeps the visible
-      // SVG exactly where the physics body actually is.
-      const anchor =
-        quads.length > 0 ? compositeQuadCentroid(quads) : rawPoints[0] ?? { x: 0, y: 0 };
-
-      let halfW = 20;
-      let halfH = 20;
-      const extentPoints = rawPoints.length ? rawPoints : [anchor];
-      for (const p of extentPoints) {
-        halfW = Math.max(halfW, Math.abs(p.x - anchor.x));
-        halfH = Math.max(halfH, Math.abs(p.y - anchor.y));
-      }
-      const displayPad = 16;
-      const bbox: BoundingBox = {
-        minX: anchor.x - halfW - displayPad,
-        minY: anchor.y - halfH - displayPad,
-        width: (halfW + displayPad) * 2,
-        height: (halfH + displayPad) * 2,
-      };
+      // A solid rectangle around the drawing's ink — this is the physics
+      // body's actual collision shape, so pieces rest against each other
+      // like real cards instead of nesting through each other's empty
+      // (undrawn) space, which is what a thin per-line collision shape
+      // would otherwise allow.
+      const bbox: BoundingBox = getStrokesBoundingBox(drawing.svg_paths, BBOX_PADDING);
 
       const { width, height } = displaySizeFor(bbox);
-      const scale = width / bbox.width;
 
       const bounds = container.getBoundingClientRect();
       const x = Math.random() * (bounds.width - width * 2) + width;
       const y = -height - Math.random() * 400 - dropDelay * 40;
       const angle = (Math.random() - 0.5) * 0.6;
 
-      const localQuads = quads.map((quad) =>
-        quad.map((p) => ({
-          x: (p.x - anchor.x) * scale,
-          y: (p.y - anchor.y) * scale,
-        }))
-      );
-
-      const physicsOptions = {
+      const body = Matter.Bodies.rectangle(x, y, width, height, {
         restitution: 0.45,
         friction: 0.3,
         frictionAir: 0.012,
         density: 0.0015,
         label: drawing.id,
-      };
-
-      let body: Matter.Body;
-      if (localQuads.length > 0) {
-        body = Matter.Bodies.fromVertices(x, y, localQuads, physicsOptions);
-        Matter.Body.setAngle(body, angle);
-      } else {
-        body = Matter.Bodies.rectangle(x, y, width, height, {
-          ...physicsOptions,
-          angle,
-          chamfer: { radius: 6 },
-        });
-      }
+        angle,
+        chamfer: { radius: 8 },
+      });
 
       // A little spin on the way in so pieces tumble rather than fall flat.
       Matter.Body.setAngularVelocity(body, (Math.random() - 0.5) * 0.15);
 
       bodiesRef.current.set(drawing.id, body);
+      sizesRef.current.set(drawing.id, { width, height });
       Matter.World.add(engine.world, body);
       orderRef.current.push(drawing.id);
       occupiedAreaRef.current += width * height;
@@ -179,16 +140,70 @@ export default function GravityGallery({ bottomInset = 0 }: GravityGalleryProps)
     const container = containerRef.current;
     if (!container) return;
 
-    const engine = Matter.Engine.create();
+    const engine = Matter.Engine.create({
+      // Higher than default iteration counts so that overlapping spawns
+      // (two drawings landing close together) get resolved gently over
+      // several steps instead of one large corrective impulse.
+      positionIterations: 10,
+      velocityIterations: 8,
+    });
     engine.gravity.y = 1;
     engineRef.current = engine;
 
-    const runner = Matter.Runner.create();
-    Matter.Runner.run(runner, engine);
+    // A spawn-overlap correction can otherwise fling a body fast enough to
+    // tunnel straight through the floor within a single physics step, so it
+    // lands off-screen and never settles. Matter.js has no continuous
+    // collision detection, so instead of a single ~16.7ms step per frame we
+    // run several smaller substeps — each one moves every body less,
+    // leaving collision detection enough chances to catch it before it
+    // skips through the floor — and clamp velocity as a second safety net.
+    const SUBSTEPS = 4;
+    const FIXED_DELTA = 1000 / 60 / SUBSTEPS;
+    const MAX_SPEED = 40;
+    const onAfterUpdate = () => {
+      const floorY = floorYRef.current;
+      bodiesRef.current.forEach((body) => {
+        const speed = Matter.Vector.magnitude(body.velocity);
+        if (speed > MAX_SPEED) {
+          const scale = MAX_SPEED / speed;
+          Matter.Body.setVelocity(body, {
+            x: body.velocity.x * scale,
+            y: body.velocity.y * scale,
+          });
+        }
+
+        // Hard backstop: whatever the solver did (deep spawn overlaps can
+        // still leave a body partially sunk into the floor even with
+        // substeps and a velocity cap), never let a body's lowest point
+        // rest below the floor line — pop it back up and kill any
+        // remaining downward velocity.
+        let lowestY = -Infinity;
+        for (const v of body.vertices) {
+          if (v.y > lowestY) lowestY = v.y;
+        }
+        if (lowestY > floorY) {
+          Matter.Body.translate(body, { x: 0, y: floorY - lowestY });
+          if (body.velocity.y > 0) {
+            Matter.Body.setVelocity(body, { x: body.velocity.x, y: 0 });
+          }
+        }
+      });
+    };
+    Matter.Events.on(engine, "afterUpdate", onAfterUpdate);
+
+    let physicsRafId = 0;
+    const stepPhysics = () => {
+      for (let i = 0; i < SUBSTEPS; i++) {
+        Matter.Engine.update(engine, FIXED_DELTA);
+      }
+      physicsRafId = requestAnimationFrame(stepPhysics);
+    };
+    physicsRafId = requestAnimationFrame(stepPhysics);
 
     const buildWalls = () => {
       const { width, height } = container.getBoundingClientRect();
       const floorY = height - bottomInsetRef.current;
+      floorYRef.current = floorY;
       wallsRef.current.forEach((w) => Matter.World.remove(engine.world, w));
       const floor = Matter.Bodies.rectangle(
         width / 2,
@@ -254,11 +269,24 @@ export default function GravityGallery({ bottomInset = 0 }: GravityGalleryProps)
 
     // Sync DOM transforms to physics bodies every frame without
     // triggering React re-renders.
+    //
+    // This computes the top-left offset in plain pixels rather than
+    // combining rotate() with a percentage-based translate(-50%,-50%):
+    // that combination is resolved around the *rotated* box's own
+    // transform-origin, so for a non-square card it silently drifts the
+    // visual position away from body.position by up to a full width/height
+    // once the card has spun away from 0° — exactly the "spins and ends up
+    // somewhere else" symptom. transform-origin already defaults to the
+    // element's center, so translating by (x - width/2, y - height/2) and
+    // then rotating keeps the rotation pivot at body.position for any angle.
     const syncPositions = () => {
       bodiesRef.current.forEach((body, id) => {
         const el = elementsRef.current.get(id);
-        if (!el) return;
-        el.style.transform = `translate3d(${body.position.x}px, ${body.position.y}px, 0) rotate(${body.angle}rad) translate(-50%, -50%)`;
+        const size = sizesRef.current.get(id);
+        if (!el || !size) return;
+        const left = body.position.x - size.width / 2;
+        const top = body.position.y - size.height / 2;
+        el.style.transform = `translate3d(${left}px, ${top}px, 0) rotate(${body.angle}rad)`;
       });
       rafRef.current = requestAnimationFrame(syncPositions);
     };
@@ -282,7 +310,8 @@ export default function GravityGallery({ bottomInset = 0 }: GravityGalleryProps)
       container.removeEventListener("pointermove", onPointerMove);
       cancelAnimationFrame(rafRef.current);
       unsubscribe();
-      Matter.Runner.stop(runner);
+      Matter.Events.off(engine, "afterUpdate", onAfterUpdate);
+      cancelAnimationFrame(physicsRafId);
       Matter.World.clear(engine.world, false);
       Matter.Engine.clear(engine);
       bodiesRef.current.clear();
