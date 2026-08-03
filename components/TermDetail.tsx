@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { SolarTerm } from "@/lib/terms";
+import { SolarTerm, formatTermDate } from "@/lib/terms";
 import { getContrastText } from "@/lib/color";
 
 export default function TermDetail({ term }: { term: SolarTerm }) {
@@ -17,7 +17,7 @@ export default function TermDetail({ term }: { term: SolarTerm }) {
           className="rounded-3xl px-6 py-10 sm:px-10 sm:py-14 mb-8"
           style={{ backgroundColor: term.color, color: textColor }}
         >
-          <p className="text-sm opacity-80 mb-3">{term.date}</p>
+          <p className="text-sm opacity-80 mb-3">{formatTermDate(term.date)}</p>
           <h1 className="text-3xl sm:text-4xl mb-1">
             {term.hangul} <span className="opacity-90">{term.romanized}</span>
           </h1>
@@ -28,6 +28,13 @@ export default function TermDetail({ term }: { term: SolarTerm }) {
             {term.description}
           </p>
         </div>
+
+        <h2 className="text-xs sm:text-sm uppercase tracking-wide opacity-50 mb-2">
+          Seasonal wisdom
+        </h2>
+        <p className="text-sm sm:text-base leading-relaxed opacity-80 mb-8">
+          {term.wisdom}
+        </p>
 
         <p className="text-sm sm:text-base leading-relaxed opacity-80 mb-8">
           Draw something that captures the feeling of{" "}

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { SolarTerm } from "@/lib/terms";
 import { StrokePath, submitDrawing } from "@/lib/drawings";
@@ -8,6 +8,7 @@ import { CANVAS_WIDTH, CANVAS_HEIGHT } from "@/lib/canvas";
 import DrawingCanvas from "@/components/DrawingCanvas";
 
 type Step = "draw" | "submit";
+const CANVAS_ASPECT = CANVAS_WIDTH / CANVAS_HEIGHT;
 
 export default function CanvasFlow({ term }: { term: SolarTerm }) {
   const router = useRouter();
@@ -17,6 +18,35 @@ export default function CanvasFlow({ term }: { term: SolarTerm }) {
   const [note, setNote] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  // Measure the available area ourselves (rather than relying on CSS
+  // aspect-ratio auto-sizing inside a centered flex box, which doesn't
+  // reliably fill available space without an explicit sizing basis) so
+  // the canvas always uses as much of the screen as it can while keeping
+  // its A6 ratio and never needing to scroll.
+  const fitRef = useRef<HTMLDivElement>(null);
+  const [canvasSize, setCanvasSize] = useState({ width: 320, height: 320 / CANVAS_ASPECT });
+
+  useEffect(() => {
+    const el = fitRef.current;
+    if (!el) return;
+
+    const measure = () => {
+      const { width: availW, height: availH } = el.getBoundingClientRect();
+      if (availW <= 0 || availH <= 0) return;
+      const containerAspect = availW / availH;
+      if (containerAspect > CANVAS_ASPECT) {
+        setCanvasSize({ width: availH * CANVAS_ASPECT, height: availH });
+      } else {
+        setCanvasSize({ width: availW, height: availW / CANVAS_ASPECT });
+      }
+    };
+
+    measure();
+    const observer = new ResizeObserver(measure);
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   const undo = () => setStrokes((s) => s.slice(0, -1));
   const clear = () => setStrokes([]);
@@ -106,7 +136,7 @@ export default function CanvasFlow({ term }: { term: SolarTerm }) {
 
   return (
     <main className="h-[100dvh] pt-20 pb-4 px-5 sm:px-8 flex flex-col overflow-hidden">
-      <div className="max-w-md mx-auto w-full flex-1 flex flex-col min-h-0">
+      <div className="max-w-2xl mx-auto w-full flex-1 flex flex-col min-h-0">
         <div className="flex items-center justify-between mb-3 shrink-0">
           <div className="flex items-center gap-2">
             <span
@@ -127,13 +157,12 @@ export default function CanvasFlow({ term }: { term: SolarTerm }) {
           </button>
         </div>
 
-        <div className="flex-1 min-h-0 flex items-center justify-center">
+        <div ref={fitRef} className="flex-1 min-h-0 flex items-center justify-center">
           <div
             className="rounded-2xl bg-white shadow-[0_2px_20px_rgba(39,32,24,0.08)] overflow-hidden"
             style={{
-              aspectRatio: `${CANVAS_WIDTH} / ${CANVAS_HEIGHT}`,
-              maxWidth: "100%",
-              maxHeight: "100%",
+              width: canvasSize.width,
+              height: canvasSize.height,
             }}
           >
             <DrawingCanvas

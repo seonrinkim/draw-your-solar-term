@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { SOLAR_TERMS, Season } from "@/lib/terms";
+import { SOLAR_TERMS, Season, formatTermDate } from "@/lib/terms";
 import { getContrastText } from "@/lib/color";
 
 const SEASON_LABELS: Record<Season, string> = {
@@ -37,7 +37,7 @@ export default function DrawSelectPage() {
                     color: getContrastText(term.color),
                   }}
                 >
-                  <span className="text-xs opacity-80">{term.date}</span>
+                  <span className="text-xs opacity-80">{formatTermDate(term.date)}</span>
                   <div>
                     <div className="text-base font-medium">
                       {term.hangul}

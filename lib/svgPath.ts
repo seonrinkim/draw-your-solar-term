@@ -71,106 +71,97 @@ export function getStrokesBoundingBox(
   };
 }
 
+function extractPoints(d: string): Point[] {
+  const nums = d.match(NUMBER_RE);
+  if (!nums) return [];
+  const pts: Point[] = [];
+  for (let i = 0; i + 1 < nums.length; i += 2) {
+    pts.push({ x: parseFloat(nums[i]), y: parseFloat(nums[i + 1]) });
+  }
+  return pts;
+}
+
 export function getStrokesPoints(strokes: { d: string }[]): Point[] {
-  const points: Point[] = [];
+  return strokes.flatMap((s) => extractPoints(s.d));
+}
+
+// Builds one thin rectangle ("quad") per line segment of every stroke, sized
+// to the stroke's own width plus padding. Used as compound Matter.js parts
+// so physics collision follows the actual drawn line instead of a bounding
+// box or a blobby hull — and unlike a hull, a segment quad's area is always
+// segment_length * width, so it never degenerates for straight lines.
+export function getSegmentQuads(
+  strokes: { d: string; width: number }[],
+  extraPadding = 10
+): Point[][] {
+  const quads: Point[][] = [];
+
   for (const stroke of strokes) {
-    const nums = stroke.d.match(NUMBER_RE);
-    if (!nums) continue;
-    for (let i = 0; i + 1 < nums.length; i += 2) {
-      points.push({ x: parseFloat(nums[i]), y: parseFloat(nums[i + 1]) });
+    const pts = extractPoints(stroke.d);
+    const halfW = stroke.width / 2 + extraPadding;
+
+    if (pts.length === 1) {
+      const p = pts[0];
+      quads.push([
+        { x: p.x - halfW, y: p.y - halfW },
+        { x: p.x + halfW, y: p.y - halfW },
+        { x: p.x + halfW, y: p.y + halfW },
+        { x: p.x - halfW, y: p.y + halfW },
+      ]);
+      continue;
+    }
+
+    for (let i = 0; i < pts.length - 1; i++) {
+      const a = pts[i];
+      const b = pts[i + 1];
+      const dx = b.x - a.x;
+      const dy = b.y - a.y;
+      const len = Math.sqrt(dx * dx + dy * dy);
+      if (len < 0.01) continue;
+      const nx = (-dy / len) * halfW;
+      const ny = (dx / len) * halfW;
+      quads.push([
+        { x: a.x + nx, y: a.y + ny },
+        { x: b.x + nx, y: b.y + ny },
+        { x: b.x - nx, y: b.y - ny },
+        { x: a.x - nx, y: a.y - ny },
+      ]);
     }
   }
-  return points;
+
+  return quads;
 }
 
-// Andrew's monotone chain: O(n log n) convex hull, returned counter-clockwise.
-export function convexHull(points: Point[]): Point[] {
-  const pts = Array.from(
-    new Map(points.map((p) => [`${p.x},${p.y}`, p])).values()
-  ).sort((a, b) => (a.x === b.x ? a.y - b.y : a.x - b.x));
-
-  if (pts.length < 3) return pts;
-
-  const cross = (o: Point, a: Point, b: Point) =>
-    (a.x - o.x) * (b.y - o.y) - (a.y - o.y) * (b.x - o.x);
-
-  const lower: Point[] = [];
-  for (const p of pts) {
-    while (
-      lower.length >= 2 &&
-      cross(lower[lower.length - 2], lower[lower.length - 1], p) <= 0
-    ) {
-      lower.pop();
-    }
-    lower.push(p);
-  }
-
-  const upper: Point[] = [];
-  for (let i = pts.length - 1; i >= 0; i--) {
-    const p = pts[i];
-    while (
-      upper.length >= 2 &&
-      cross(upper[upper.length - 2], upper[upper.length - 1], p) <= 0
-    ) {
-      upper.pop();
-    }
-    upper.push(p);
-  }
-
-  lower.pop();
-  upper.pop();
-  return lower.concat(upper);
-}
-
-export function polygonArea(points: Point[]): number {
-  let area = 0;
-  for (let i = 0; i < points.length; i++) {
-    const p0 = points[i];
-    const p1 = points[(i + 1) % points.length];
-    area += p0.x * p1.y - p1.x * p0.y;
-  }
-  return Math.abs(area) / 2;
-}
-
-// Pushes each hull vertex outward from the centroid so the collision
-// boundary has some breathing room beyond the raw stroke centerline.
-export function padHull(hull: Point[], centroid: Point, amount: number): Point[] {
-  return hull.map((p) => {
-    const dx = p.x - centroid.x;
-    const dy = p.y - centroid.y;
-    const dist = Math.sqrt(dx * dx + dy * dy);
-    if (dist < 0.01) return p;
-    return {
-      x: p.x + (dx / dist) * amount,
-      y: p.y + (dy / dist) * amount,
-    };
-  });
-}
-
-export function centroidOf(points: Point[]): Point {
-  const sum = points.reduce(
-    (acc, p) => ({ x: acc.x + p.x, y: acc.y + p.y }),
-    { x: 0, y: 0 }
-  );
-  return { x: sum.x / points.length, y: sum.y / points.length };
-}
-
-// Area-weighted polygon centroid (shoelace formula) — the same calculation
-// Matter.js uses internally, so using it for our render anchor keeps the
-// SVG visually centered on exactly the point Matter treats as body.position.
-export function polygonCentroid(points: Point[]): Point {
-  let area = 0;
+// Area-weighted centroid across a set of quad parts — the same "composite
+// body centroid" formula a physics engine uses to place a compound body, so
+// using it as our render anchor keeps the drawing visually centered on
+// exactly the point Matter.js treats as body.position. Each quad is a
+// rectangle/parallelogram, so its own centroid is just the average of its
+// 4 corners and its area comes from the shoelace formula.
+export function compositeQuadCentroid(quads: Point[][]): Point {
+  let totalArea = 0;
   let cx = 0;
   let cy = 0;
-  for (let i = 0; i < points.length; i++) {
-    const p0 = points[i];
-    const p1 = points[(i + 1) % points.length];
-    const cross = p0.x * p1.y - p1.x * p0.y;
-    area += cross;
-    cx += (p0.x + p1.x) * cross;
-    cy += (p0.y + p1.y) * cross;
+
+  for (const quad of quads) {
+    let area = 0;
+    for (let i = 0; i < quad.length; i++) {
+      const p0 = quad[i];
+      const p1 = quad[(i + 1) % quad.length];
+      area += p0.x * p1.y - p1.x * p0.y;
+    }
+    area = Math.abs(area) / 2;
+
+    const centroid = quad.reduce(
+      (acc, p) => ({ x: acc.x + p.x / quad.length, y: acc.y + p.y / quad.length }),
+      { x: 0, y: 0 }
+    );
+
+    cx += centroid.x * area;
+    cy += centroid.y * area;
+    totalArea += area;
   }
-  area *= 0.5;
-  if (Math.abs(area) < 1e-6) return centroidOf(points);
-  return { x: cx / (6 * area), y: cy / (6 * area) };
+
+  if (totalArea < 1e-6) return { x: 0, y: 0 };
+  return { x: cx / totalArea, y: cy / totalArea };
 }

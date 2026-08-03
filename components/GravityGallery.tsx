@@ -5,23 +5,16 @@ import Matter from "matter-js";
 import { DrawingRecord, fetchDrawings, subscribeToNewDrawings } from "@/lib/drawings";
 import {
   BoundingBox,
-  Point,
-  centroidOf,
-  convexHull,
+  compositeQuadCentroid,
+  getSegmentQuads,
   getStrokesPoints,
-  padHull,
-  polygonArea,
-  polygonCentroid,
 } from "@/lib/svgPath";
 
 const WALL_THICKNESS = 200;
 const HOVER_RADIUS = 160;
 const HOVER_FORCE = 0.0012;
-const HULL_PADDING = 14; // canvas units of breathing room around the raw stroke points
-// Below this hull area (canvas units²) a "convex hull" is too thin/sliver-like
-// to trust as a physics body — near-zero mass makes it numerically unstable
-// (bodies can fly off to absurd positions). Fall back to a rectangle instead.
-const MIN_HULL_AREA = 400;
+const QUAD_PADDING = 12; // canvas units of grabbable margin around each thin line segment
+const FILL_RATIO_CAP = 0.8; // once occupied footprint hits ~80% of the screen, retire the oldest pieces
 
 // Map a stroke's bounding-box longest side (in canvas units) to an
 // on-screen size, so small doodles stay small and bigger ones stay bigger.
@@ -52,7 +45,22 @@ export default function GravityGallery() {
   const bodiesRef = useRef<Map<string, Matter.Body>>(new Map());
   const elementsRef = useRef<Map<string, HTMLDivElement>>(new Map());
   const wallsRef = useRef<Matter.Body[]>([]);
+  const orderRef = useRef<string[]>([]); // insertion order, oldest first
+  const occupiedAreaRef = useRef(0);
   const [cards, setCards] = useState<CardMeta[]>([]);
+
+  // Occupied-area bookkeeping happens at the call site (before removal),
+  // since that's where we know the card's display width/height.
+  const removeCard = useCallback((id: string) => {
+    const engine = engineRef.current;
+    const body = bodiesRef.current.get(id);
+    if (engine && body) {
+      Matter.World.remove(engine.world, body);
+    }
+    bodiesRef.current.delete(id);
+    elementsRef.current.delete(id);
+    setCards((prev) => prev.filter((c) => c.id !== id));
+  }, []);
 
   const addBodyForDrawing = useCallback(
     (drawing: DrawingRecord, dropDelay = 0) => {
@@ -61,31 +69,31 @@ export default function GravityGallery() {
       if (!engine || !container) return;
       if (bodiesRef.current.has(drawing.id)) return;
 
-      // Build a convex hull around the actual stroke points so pieces
-      // collide with each other roughly along their own drawn silhouette
-      // instead of a rectangular card bounding box.
+      // Thin rectangles along each drawn segment (compound parts), so
+      // collision follows the actual line instead of a bounding box.
+      const quads = getSegmentQuads(drawing.svg_paths, QUAD_PADDING);
       const rawPoints = getStrokesPoints(drawing.svg_paths);
-      const hull = rawPoints.length >= 3 ? convexHull(rawPoints) : [];
-      const usableHull = hull.length >= 3 && polygonArea(hull) >= MIN_HULL_AREA;
 
-      const centroid = usableHull
-        ? polygonCentroid(hull)
-        : centroidOf(rawPoints.length ? rawPoints : [{ x: 0, y: 0 }]);
-      const paddedHull = usableHull ? padHull(hull, centroid, HULL_PADDING) : hull;
+      // Matter.js places a compound body so that the *area-weighted centroid
+      // of its parts* lands at body.position — not any bounding-box center.
+      // Anchoring our render box on that same centroid keeps the visible
+      // SVG exactly where the physics body actually is.
+      const anchor =
+        quads.length > 0 ? compositeQuadCentroid(quads) : rawPoints[0] ?? { x: 0, y: 0 };
 
-      const sourcePoints: Point[] =
-        paddedHull.length >= 3 ? paddedHull : rawPoints.length ? rawPoints : [{ x: 0, y: 0 }];
       let halfW = 20;
       let halfH = 20;
-      for (const p of sourcePoints) {
-        halfW = Math.max(halfW, Math.abs(p.x - centroid.x));
-        halfH = Math.max(halfH, Math.abs(p.y - centroid.y));
+      const extentPoints = rawPoints.length ? rawPoints : [anchor];
+      for (const p of extentPoints) {
+        halfW = Math.max(halfW, Math.abs(p.x - anchor.x));
+        halfH = Math.max(halfH, Math.abs(p.y - anchor.y));
       }
+      const displayPad = 16;
       const bbox: BoundingBox = {
-        minX: centroid.x - halfW,
-        minY: centroid.y - halfH,
-        width: halfW * 2,
-        height: halfH * 2,
+        minX: anchor.x - halfW - displayPad,
+        minY: anchor.y - halfH - displayPad,
+        width: (halfW + displayPad) * 2,
+        height: (halfH + displayPad) * 2,
       };
 
       const { width, height } = displaySizeFor(bbox);
@@ -96,37 +104,61 @@ export default function GravityGallery() {
       const y = -height - Math.random() * 400 - dropDelay * 40;
       const angle = (Math.random() - 0.5) * 0.6;
 
+      const localQuads = quads.map((quad) =>
+        quad.map((p) => ({
+          x: (p.x - anchor.x) * scale,
+          y: (p.y - anchor.y) * scale,
+        }))
+      );
+
+      const physicsOptions = {
+        restitution: 0.45,
+        friction: 0.3,
+        frictionAir: 0.012,
+        density: 0.0015,
+        label: drawing.id,
+      };
+
       let body: Matter.Body;
-      if (usableHull) {
-        const localVerts = paddedHull.map((p) => ({
-          x: (p.x - centroid.x) * scale,
-          y: (p.y - centroid.y) * scale,
-        }));
-        body = Matter.Bodies.fromVertices(x, y, [localVerts], {
-          restitution: 0.25,
-          friction: 0.55,
-          frictionAir: 0.02,
-          density: 0.0015,
-          label: drawing.id,
-        });
+      if (localQuads.length > 0) {
+        body = Matter.Bodies.fromVertices(x, y, localQuads, physicsOptions);
         Matter.Body.setAngle(body, angle);
       } else {
         body = Matter.Bodies.rectangle(x, y, width, height, {
+          ...physicsOptions,
           angle,
-          chamfer: { radius: 8 },
-          restitution: 0.25,
-          friction: 0.55,
-          frictionAir: 0.02,
-          density: 0.0015,
-          label: drawing.id,
+          chamfer: { radius: 6 },
         });
       }
 
+      // A little spin on the way in so pieces tumble rather than fall flat.
+      Matter.Body.setAngularVelocity(body, (Math.random() - 0.5) * 0.15);
+
       bodiesRef.current.set(drawing.id, body);
       Matter.World.add(engine.world, body);
+      orderRef.current.push(drawing.id);
+      occupiedAreaRef.current += width * height;
       setCards((prev) => [...prev, { id: drawing.id, drawing, bbox, width, height }]);
+
+      // Once the pile's footprint fills ~80% of the screen, retire the
+      // oldest pieces so newer submissions keep visibly landing on top.
+      const containerArea = bounds.width * bounds.height;
+      while (
+        occupiedAreaRef.current > containerArea * FILL_RATIO_CAP &&
+        orderRef.current.length > 1
+      ) {
+        const oldestId = orderRef.current[0];
+        const oldestCard = bodiesRef.current.get(oldestId);
+        if (oldestCard) {
+          const w = oldestCard.bounds.max.x - oldestCard.bounds.min.x;
+          const h = oldestCard.bounds.max.y - oldestCard.bounds.min.y;
+          occupiedAreaRef.current = Math.max(0, occupiedAreaRef.current - w * h);
+        }
+        orderRef.current.shift();
+        removeCard(oldestId);
+      }
     },
-    []
+    [removeCard]
   );
 
   // Set up the physics world once.
@@ -240,6 +272,8 @@ export default function GravityGallery() {
       Matter.Engine.clear(engine);
       bodiesRef.current.clear();
       elementsRef.current.clear();
+      orderRef.current = [];
+      occupiedAreaRef.current = 0;
       setCards([]);
     };
   }, [addBodyForDrawing]);

@@ -9,6 +9,7 @@ export interface SolarTerm {
   season: Season;
   color: string; // hex
   description: string;
+  wisdom: string;
 }
 
 // Brand anchor colors (from Van het Seizoen palette):
@@ -30,6 +31,8 @@ export const SOLAR_TERMS: SolarTerm[] = [
     season: "spring",
     color: "#3E3428",
     description: "The first stirrings of warmth beneath still-cold soil.",
+    wisdom:
+      "Families used to paste handwritten couplets called ipchuncheop on their gates and doorframes, wishing for good fortune and abundance in the year ahead.",
   },
   {
     slug: "usu",
@@ -40,6 +43,8 @@ export const SOLAR_TERMS: SolarTerm[] = [
     season: "spring",
     color: "#726F4F",
     description: "Snow melts into rain as the ground begins to soften.",
+    wisdom:
+      "As river ice broke up and snow turned to rain, farmers began readying seedbeds and repairing tools, treating Usu as nature's signal to prepare for planting.",
   },
   {
     slug: "gyeongchip",
@@ -50,6 +55,8 @@ export const SOLAR_TERMS: SolarTerm[] = [
     season: "spring",
     color: "#7C9457",
     description: "Hibernating creatures stir awake to the season's first thunder.",
+    wisdom:
+      "People believed spring water drawn on this day carried special vitality, and eating eggs at Gyeongchip was considered a small ritual for good health as the earth woke up.",
   },
   {
     slug: "chunbun",
@@ -60,6 +67,8 @@ export const SOLAR_TERMS: SolarTerm[] = [
     season: "spring",
     color: "#8A9E6A",
     description: "Day and night balance as fresh green spreads across the land.",
+    wisdom:
+      "With day and night in balance, Chunbun marked the true start of the farming year — full-scale plowing began, and elders read the day's wind and weather as an omen for the season's harvest.",
   },
   {
     slug: "cheongmyeong",
@@ -70,6 +79,8 @@ export const SOLAR_TERMS: SolarTerm[] = [
     season: "spring",
     color: "#90B47E",
     description: "Skies clear and fields brighten for the season's planting.",
+    wisdom:
+      "Falling near the Hansik holiday, this was traditionally a day to visit and tend ancestral graves, and some households ate only food prepared the day before, keeping the hearth fire unlit out of old custom.",
   },
   {
     slug: "gogu",
@@ -80,6 +91,8 @@ export const SOLAR_TERMS: SolarTerm[] = [
     season: "spring",
     color: "#83B995",
     description: "Gentle rains nourish the newly sown grain.",
+    wisdom:
+      "This was considered the best time to tap gorosoe trees for their sap, drunk as a spring tonic, while rice farmers began wet-seeding paddies as the rains soaked into the soil.",
   },
   {
     slug: "ipha",
@@ -90,6 +103,8 @@ export const SOLAR_TERMS: SolarTerm[] = [
     season: "summer",
     color: "#81BBA8",
     description: "Leaves thicken as the air turns warm and humid.",
+    wisdom:
+      "Villages moved into full summer rhythm, transplanting rice seedlings and tending mulberry leaves to feed the silkworms that many families raised for silk.",
   },
   {
     slug: "soman",
@@ -100,6 +115,8 @@ export const SOLAR_TERMS: SolarTerm[] = [
     season: "summer",
     color: "#84C2B6",
     description: "Crops fill out under the strengthening early summer sun.",
+    wisdom:
+      "As barley began to fill out in the fields, households busied themselves with irrigation and weeding, preparing for the harvest rush that Mangjong would soon bring.",
   },
   {
     slug: "mangjong",
@@ -110,6 +127,8 @@ export const SOLAR_TERMS: SolarTerm[] = [
     season: "summer",
     color: "#88C8C2",
     description: "Barley ripens and rice seedlings are planted in the paddies.",
+    wisdom:
+      "Barley harvest and rice transplanting landed at once, giving rise to the saying that people were so busy they'd \"wet their own feet standing still\" — Mangjong is remembered as the hardest-working stretch of the farming year.",
   },
   {
     slug: "haji",
@@ -120,6 +139,8 @@ export const SOLAR_TERMS: SolarTerm[] = [
     season: "summer",
     color: "#8DCFCC",
     description: "The longest day of the year, under the brightest sky.",
+    wisdom:
+      "With barley harvest expected to be finished by Haji, communities would hold rain rituals if the skies stayed dry too long, praying for enough water to carry the rice paddies through summer.",
   },
   {
     slug: "soseo",
@@ -130,6 +151,8 @@ export const SOLAR_TERMS: SolarTerm[] = [
     season: "summer",
     color: "#75BD81",
     description: "Humid heat settles in as the rainy season peaks.",
+    wisdom:
+      "As Korea's monsoon season (jangma) set in, households reinforced roofs and drainage against flooding and shifted to cooling, easily digestible meals to handle the thickening humidity.",
   },
   {
     slug: "daeseo",
@@ -140,6 +163,8 @@ export const SOLAR_TERMS: SolarTerm[] = [
     season: "summer",
     color: "#C0C059",
     description: "The hottest days of the year, thick with summer haze.",
+    wisdom:
+      "Falling within the sambok dog days, this was when people ate hot samgyetang, believing in \"fighting heat with heat,\" and wore loose hemp sambe clothing that let air move against the skin.",
   },
   {
     slug: "ipchu",
@@ -150,6 +175,8 @@ export const SOLAR_TERMS: SolarTerm[] = [
     season: "autumn",
     color: "#C68B39",
     description: "A first hint of coolness slips into the lingering heat.",
+    wisdom:
+      "Farmers watched Ipchu's weather closely, as an old saying held that the day's wind and sky foretold how bountiful the coming rice harvest would be.",
   },
   {
     slug: "cheoseo",
@@ -160,6 +187,8 @@ export const SOLAR_TERMS: SolarTerm[] = [
     season: "autumn",
     color: "#C46E31",
     description: "The summer heat breaks and mornings turn crisp.",
+    wisdom:
+      "A well-known saying goes that \"even a mosquito's mouth turns crooked\" by Cheoseo — households took the cooling air as their cue to air out and sun-dry bedding and summer clothes before packing them away.",
   },
   {
     slug: "baengno",
@@ -170,6 +199,8 @@ export const SOLAR_TERMS: SolarTerm[] = [
     season: "autumn",
     color: "#C66839",
     description: "Cool nights leave dew glistening white on the grass.",
+    wisdom:
+      "With cool morning dew now settling on the fields, families began preparing for the rice harvest and for Chuseok, the autumn harvest festival that often falls close behind.",
   },
   {
     slug: "chubun",
@@ -180,6 +211,8 @@ export const SOLAR_TERMS: SolarTerm[] = [
     season: "autumn",
     color: "#C94A1E",
     description: "Day and night balance again as leaves turn to color.",
+    wisdom:
+      "As day and night balanced once more, this was a season for giving thanks — tending family graves and sharing the year's harvest, echoing the same spirit of gratitude at the heart of Chuseok.",
   },
   {
     slug: "hallo",
@@ -190,6 +223,8 @@ export const SOLAR_TERMS: SolarTerm[] = [
     season: "autumn",
     color: "#9D4125",
     description: "Dew turns cold as autumn deepens toward winter.",
+    wisdom:
+      "As chrysanthemums came into bloom, people traditionally drank gukhwaju, chrysanthemum-infused wine, and took autumn outings into the hills to admire the turning leaves before the cold set in fully.",
   },
   {
     slug: "sanggang",
@@ -200,6 +235,8 @@ export const SOLAR_TERMS: SolarTerm[] = [
     season: "autumn",
     color: "#683D27",
     description: "The year's first frost settles over fading fields.",
+    wisdom:
+      "With the year's first frost on the way, farmers raced to bring in the last of the rice harvest, while red peppers and persimmons were laid out to dry in the autumn sun before the cold could reach them.",
   },
   {
     slug: "ipdong",
@@ -210,6 +247,8 @@ export const SOLAR_TERMS: SolarTerm[] = [
     season: "winter",
     color: "#4A3526",
     description: "The air sharpens as the land prepares to rest.",
+    wisdom:
+      "This was traditionally when kimjang began — whole families and neighbors gathering to prepare enough kimchi to last the household through the long winter ahead.",
   },
   {
     slug: "soseol",
@@ -220,6 +259,8 @@ export const SOLAR_TERMS: SolarTerm[] = [
     season: "winter",
     color: "#625141",
     description: "The first light snow dusts the darkening season.",
+    wisdom:
+      "As the first snow and sharper winds arrived, households finished sealing windows and doors against drafts and brought out heavier winter clothing in preparation for the cold to come.",
   },
   {
     slug: "daeseol",
@@ -230,6 +271,8 @@ export const SOLAR_TERMS: SolarTerm[] = [
     season: "winter",
     color: "#33271E",
     description: "Heavy snow blankets the quiet winter landscape.",
+    wisdom:
+      "Heavy snowfall at Daeseol was welcomed rather than feared — a deep snow cover was believed to insulate the wheat fields and promise a more fruitful harvest the following year.",
   },
   {
     slug: "dongji",
@@ -240,6 +283,8 @@ export const SOLAR_TERMS: SolarTerm[] = [
     season: "winter",
     color: "#272018",
     description: "The longest night of the year, deep and still.",
+    wisdom:
+      "On the year's longest night, families ate patjuk, red bean porridge with chewy rice balls, said to ward off evil spirits — and everyone added one rice ball for each year of their age.",
   },
   {
     slug: "sohan",
@@ -250,6 +295,8 @@ export const SOLAR_TERMS: SolarTerm[] = [
     season: "winter",
     color: "#1C1612",
     description: "The coldest stretch of the year begins to bite.",
+    wisdom:
+      "Despite its name, Sohan is often colder than Daehan that follows it — an old saying jokes that \"Daehan froze to death visiting Sohan's house,\" and households used this stretch to stock up on food and firewood.",
   },
   {
     slug: "daehan",
@@ -260,11 +307,34 @@ export const SOLAR_TERMS: SolarTerm[] = [
     season: "winter",
     color: "#15110F",
     description: "The year's harshest cold, just before spring returns.",
+    wisdom:
+      "As the last solar term of the year, Daehan was traditionally spent finishing year-end chores and rites to send off the old year, so the household could greet Ipchun and the new cycle of spring with a clean start.",
   },
 ];
 
 export function getTermBySlug(slug: string): SolarTerm | undefined {
   return SOLAR_TERMS.find((t) => t.slug === slug);
+}
+
+const MONTH_NAMES = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+
+// "03-20" -> "20 March"
+export function formatTermDate(mmdd: string): string {
+  const [month, day] = mmdd.split("-").map(Number);
+  return `${day} ${MONTH_NAMES[month - 1]}`;
 }
 
 export const BRAND_COLORS = {
