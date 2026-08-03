@@ -1,0 +1,276 @@
+export type Season = "spring" | "summer" | "autumn" | "winter";
+
+export interface SolarTerm {
+  slug: string;
+  hangul: string;
+  romanized: string;
+  english: string;
+  date: string; // approximate solar date, "MM-DD"
+  season: Season;
+  color: string; // hex
+  description: string;
+}
+
+// Brand anchor colors (from Van het Seizoen palette):
+// 한지 화이트 Hanji White #F4F0E6 — used as base/paper color, not tied to a single term
+// 쑥 그린 Mugwort Green #8A9E6A — anchored at 춘분 Spring Equinox
+// 청자 민트 Celadon Mint #8DCFCC — anchored at 하지 Summer Solstice
+// 홍시 레드 Persimmon Red #C94A1E — anchored at 추분 Autumn Equinox
+// 먹 블랙 Ink Black #272018 — anchored at 동지 Winter Solstice
+// The 20 remaining terms interpolate between these four anchors in HSL space,
+// following the natural progression of the seasons.
+
+export const SOLAR_TERMS: SolarTerm[] = [
+  {
+    slug: "ipchun",
+    hangul: "입춘",
+    romanized: "Ipchun",
+    english: "Beginning of Spring",
+    date: "02-04",
+    season: "spring",
+    color: "#3E3428",
+    description: "The first stirrings of warmth beneath still-cold soil.",
+  },
+  {
+    slug: "usu",
+    hangul: "우수",
+    romanized: "Usu",
+    english: "Rain Water",
+    date: "02-19",
+    season: "spring",
+    color: "#726F4F",
+    description: "Snow melts into rain as the ground begins to soften.",
+  },
+  {
+    slug: "gyeongchip",
+    hangul: "경칩",
+    romanized: "Gyeongchip",
+    english: "Awakening of Insects",
+    date: "03-05",
+    season: "spring",
+    color: "#7C9457",
+    description: "Hibernating creatures stir awake to the season's first thunder.",
+  },
+  {
+    slug: "chunbun",
+    hangul: "춘분",
+    romanized: "Chunbun",
+    english: "Spring Equinox",
+    date: "03-20",
+    season: "spring",
+    color: "#8A9E6A",
+    description: "Day and night balance as fresh green spreads across the land.",
+  },
+  {
+    slug: "cheongmyeong",
+    hangul: "청명",
+    romanized: "Cheongmyeong",
+    english: "Clear and Bright",
+    date: "04-05",
+    season: "spring",
+    color: "#90B47E",
+    description: "Skies clear and fields brighten for the season's planting.",
+  },
+  {
+    slug: "gogu",
+    hangul: "곡우",
+    romanized: "Gogu",
+    english: "Grain Rain",
+    date: "04-20",
+    season: "spring",
+    color: "#83B995",
+    description: "Gentle rains nourish the newly sown grain.",
+  },
+  {
+    slug: "ipha",
+    hangul: "입하",
+    romanized: "Ipha",
+    english: "Beginning of Summer",
+    date: "05-05",
+    season: "summer",
+    color: "#81BBA8",
+    description: "Leaves thicken as the air turns warm and humid.",
+  },
+  {
+    slug: "soman",
+    hangul: "소만",
+    romanized: "Soman",
+    english: "Grain Full",
+    date: "05-21",
+    season: "summer",
+    color: "#84C2B6",
+    description: "Crops fill out under the strengthening early summer sun.",
+  },
+  {
+    slug: "mangjong",
+    hangul: "망종",
+    romanized: "Mangjong",
+    english: "Grain in Ear",
+    date: "06-06",
+    season: "summer",
+    color: "#88C8C2",
+    description: "Barley ripens and rice seedlings are planted in the paddies.",
+  },
+  {
+    slug: "haji",
+    hangul: "하지",
+    romanized: "Haji",
+    english: "Summer Solstice",
+    date: "06-21",
+    season: "summer",
+    color: "#8DCFCC",
+    description: "The longest day of the year, under the brightest sky.",
+  },
+  {
+    slug: "soseo",
+    hangul: "소서",
+    romanized: "Soseo",
+    english: "Minor Heat",
+    date: "07-07",
+    season: "summer",
+    color: "#75BD81",
+    description: "Humid heat settles in as the rainy season peaks.",
+  },
+  {
+    slug: "daeseo",
+    hangul: "대서",
+    romanized: "Daeseo",
+    english: "Major Heat",
+    date: "07-23",
+    season: "summer",
+    color: "#C0C059",
+    description: "The hottest days of the year, thick with summer haze.",
+  },
+  {
+    slug: "ipchu",
+    hangul: "입추",
+    romanized: "Ipchu",
+    english: "Beginning of Autumn",
+    date: "08-08",
+    season: "autumn",
+    color: "#C68B39",
+    description: "A first hint of coolness slips into the lingering heat.",
+  },
+  {
+    slug: "cheoseo",
+    hangul: "처서",
+    romanized: "Cheoseo",
+    english: "End of Heat",
+    date: "08-23",
+    season: "autumn",
+    color: "#C46E31",
+    description: "The summer heat breaks and mornings turn crisp.",
+  },
+  {
+    slug: "baengno",
+    hangul: "백로",
+    romanized: "Baengno",
+    english: "White Dew",
+    date: "09-08",
+    season: "autumn",
+    color: "#C66839",
+    description: "Cool nights leave dew glistening white on the grass.",
+  },
+  {
+    slug: "chubun",
+    hangul: "추분",
+    romanized: "Chubun",
+    english: "Autumn Equinox",
+    date: "09-23",
+    season: "autumn",
+    color: "#C94A1E",
+    description: "Day and night balance again as leaves turn to color.",
+  },
+  {
+    slug: "hallo",
+    hangul: "한로",
+    romanized: "Hallo",
+    english: "Cold Dew",
+    date: "10-08",
+    season: "autumn",
+    color: "#9D4125",
+    description: "Dew turns cold as autumn deepens toward winter.",
+  },
+  {
+    slug: "sanggang",
+    hangul: "상강",
+    romanized: "Sanggang",
+    english: "Frost Descent",
+    date: "10-23",
+    season: "autumn",
+    color: "#683D27",
+    description: "The year's first frost settles over fading fields.",
+  },
+  {
+    slug: "ipdong",
+    hangul: "입동",
+    romanized: "Ipdong",
+    english: "Beginning of Winter",
+    date: "11-07",
+    season: "winter",
+    color: "#4A3526",
+    description: "The air sharpens as the land prepares to rest.",
+  },
+  {
+    slug: "soseol",
+    hangul: "소설",
+    romanized: "Soseol",
+    english: "Minor Snow",
+    date: "11-22",
+    season: "winter",
+    color: "#625141",
+    description: "The first light snow dusts the darkening season.",
+  },
+  {
+    slug: "daeseol",
+    hangul: "대설",
+    romanized: "Daeseol",
+    english: "Major Snow",
+    date: "12-07",
+    season: "winter",
+    color: "#33271E",
+    description: "Heavy snow blankets the quiet winter landscape.",
+  },
+  {
+    slug: "dongji",
+    hangul: "동지",
+    romanized: "Dongji",
+    english: "Winter Solstice",
+    date: "12-22",
+    season: "winter",
+    color: "#272018",
+    description: "The longest night of the year, deep and still.",
+  },
+  {
+    slug: "sohan",
+    hangul: "소한",
+    romanized: "Sohan",
+    english: "Minor Cold",
+    date: "01-06",
+    season: "winter",
+    color: "#1C1612",
+    description: "The coldest stretch of the year begins to bite.",
+  },
+  {
+    slug: "daehan",
+    hangul: "대한",
+    romanized: "Daehan",
+    english: "Major Cold",
+    date: "01-20",
+    season: "winter",
+    color: "#15110F",
+    description: "The year's harshest cold, just before spring returns.",
+  },
+];
+
+export function getTermBySlug(slug: string): SolarTerm | undefined {
+  return SOLAR_TERMS.find((t) => t.slug === slug);
+}
+
+export const BRAND_COLORS = {
+  hanjiWhite: "#F4F0E6",
+  celadonMint: "#8DCFCC",
+  persimmonRed: "#C94A1E",
+  mugwortGreen: "#8A9E6A",
+  inkBlack: "#272018",
+};
