@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState, useCallback } from "react";
+import { useEffect, useLayoutEffect, useRef, useState, useCallback } from "react";
 import Matter from "matter-js";
 import { DrawingRecord, fetchDrawings, subscribeToNewDrawings } from "@/lib/drawings";
 import { BoundingBox, getStrokesBoundingBox } from "@/lib/svgPath";
@@ -64,6 +64,7 @@ export default function GravityGallery({ bottomInset = 0 }: GravityGalleryProps)
   const pointerRef = useRef<{ x: number; y: number } | null>(null);
   const tappedIdsRef = useRef<Set<string>>(new Set()); // ids currently inside the hover radius, already tapped
   const tooltipTimeoutRef = useRef<number | null>(null);
+  const tooltipRef = useRef<HTMLDivElement>(null);
   const [cards, setCards] = useState<CardMeta[]>([]);
   const [tooltip, setTooltip] = useState<TooltipState | null>(null);
 
@@ -74,6 +75,35 @@ export default function GravityGallery({ bottomInset = 0 }: GravityGalleryProps)
     const closeTooltip = () => setTooltip(null);
     window.addEventListener("click", closeTooltip);
     return () => window.removeEventListener("click", closeTooltip);
+  }, [tooltip]);
+
+  // Keep the caption bubble on-screen for cards near an edge. `tooltip.x/y`
+  // anchor to the card (center-x, top-y) and the bubble is normally centered
+  // above that via a translate — for a card near the left/right/top edge
+  // that pushes the bubble half off-screen. Runs after layout (so the
+  // bubble's real rendered width/height is known, since it varies with
+  // caption length) but before paint, and sets the transform imperatively
+  // rather than through state so nudging it doesn't cost an extra render.
+  useLayoutEffect(() => {
+    const el = tooltipRef.current;
+    if (!tooltip || !el) return;
+    const EDGE_PADDING = 12;
+    const baseTransform = "translate(-50%, calc(-100% - 10px))";
+    el.style.transform = baseTransform;
+    const rect = el.getBoundingClientRect();
+    let dx = 0;
+    if (rect.left < EDGE_PADDING) {
+      dx = EDGE_PADDING - rect.left;
+    } else if (rect.right > window.innerWidth - EDGE_PADDING) {
+      dx = window.innerWidth - EDGE_PADDING - rect.right;
+    }
+    let dy = 0;
+    if (rect.top < EDGE_PADDING) {
+      dy = EDGE_PADDING - rect.top;
+    }
+    if (dx !== 0 || dy !== 0) {
+      el.style.transform = `translate(calc(-50% + ${dx}px), calc(-100% - 10px + ${dy}px))`;
+    }
   }, [tooltip]);
 
   useEffect(() => {
@@ -481,7 +511,8 @@ export default function GravityGallery({ bottomInset = 0 }: GravityGalleryProps)
       ))}
       {tooltip && (
         <div
-          className="pointer-events-none fixed z-50 max-w-[65vw] -translate-x-1/2 -translate-y-[calc(100%+10px)] rounded-lg bg-ink px-3 py-2 text-xs text-hanji shadow-lg sm:max-w-xs sm:text-sm"
+          ref={tooltipRef}
+          className="pointer-events-none fixed z-50 max-w-[65vw] rounded-lg bg-ink px-3 py-2 text-xs text-hanji shadow-lg sm:max-w-xs sm:text-sm"
           style={{ left: tooltip.x, top: tooltip.y }}
         >
           <div className="font-medium">{tooltip.nickname}</div>
