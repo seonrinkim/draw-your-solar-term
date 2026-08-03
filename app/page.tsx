@@ -14,7 +14,7 @@ const LANGUAGE_LABELS: Record<Language, string> = {
 const FOOTER_GAP = 4; // breathing room between the drawing pile and the footer text
 
 export default function Home() {
-  const { language, setLanguage } = useLanguage();
+  const { language, setLanguage, t } = useLanguage();
   const footerRef = useRef<HTMLParagraphElement>(null);
   const [bottomInset, setBottomInset] = useState(0);
 
@@ -42,6 +42,12 @@ export default function Home() {
       <GravityGallery bottomInset={bottomInset} />
 
       <div className="pointer-events-none fixed top-0 left-0 right-0 z-40 flex items-center justify-end gap-3 px-5 py-4 sm:px-8 sm:py-5">
+        <Link
+          href="/about"
+          className="pointer-events-auto text-sm sm:text-base tracking-tight text-ink hover:opacity-70 transition-opacity"
+        >
+          {t.aboutLabel}
+        </Link>
         <div className="pointer-events-auto flex rounded-full bg-ink/5 p-1 text-xs sm:text-sm">
           {LANGUAGES.map((lang) => (
             <button
