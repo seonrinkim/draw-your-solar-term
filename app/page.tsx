@@ -41,34 +41,42 @@ export default function Home() {
     <div className="relative h-[100dvh] w-full overflow-hidden">
       <GravityGallery bottomInset={bottomInset} />
 
-      <div className="pointer-events-none fixed top-0 left-0 right-0 z-40 flex items-center justify-end gap-3 px-5 py-4 sm:px-8 sm:py-5">
+      <div className="pointer-events-none fixed top-0 left-0 right-0 z-40 flex items-center justify-between gap-3 px-5 py-4 sm:px-8 sm:py-5">
         <Link
-          href="/about"
-          className="pointer-events-auto text-sm sm:text-base tracking-tight text-ink hover:opacity-70 transition-opacity"
+          href="/"
+          className="pointer-events-auto text-base sm:text-lg tracking-tight text-ink hover:opacity-70 transition-opacity"
         >
-          {t.aboutLabel}
+          Van het Seizoen
         </Link>
-        <div className="pointer-events-auto flex rounded-full bg-ink/5 p-1 text-xs sm:text-sm">
-          {LANGUAGES.map((lang) => (
-            <button
-              key={lang}
-              onClick={() => setLanguage(lang)}
-              className={`px-3 py-1.5 rounded-full transition-colors ${
-                language === lang
-                  ? "bg-ink text-hanji"
-                  : "opacity-60 hover:opacity-100"
-              }`}
-            >
-              {LANGUAGE_LABELS[lang]}
-            </button>
-          ))}
+        <div className="pointer-events-auto flex items-center gap-3">
+          <Link
+            href="/about"
+            className="text-sm sm:text-base tracking-tight text-ink hover:opacity-70 transition-opacity"
+          >
+            {t.aboutLabel}
+          </Link>
+          <div className="flex rounded-full bg-ink/5 p-1 text-xs sm:text-sm">
+            {LANGUAGES.map((lang) => (
+              <button
+                key={lang}
+                onClick={() => setLanguage(lang)}
+                className={`px-3 py-1.5 rounded-full transition-colors ${
+                  language === lang
+                    ? "bg-ink text-hanji"
+                    : "opacity-60 hover:opacity-100"
+                }`}
+              >
+                {LANGUAGE_LABELS[lang]}
+              </button>
+            ))}
+          </div>
+          <Link
+            href="/draw"
+            className="px-5 py-2.5 rounded-full text-sm sm:text-base bg-ink text-hanji hover:opacity-85 transition-opacity"
+          >
+            I want to draw!
+          </Link>
         </div>
-        <Link
-          href="/draw"
-          className="pointer-events-auto px-5 py-2.5 rounded-full text-sm sm:text-base bg-ink text-hanji hover:opacity-85 transition-opacity"
-        >
-          I want to draw!
-        </Link>
       </div>
 
       <div className="pointer-events-none fixed bottom-6 left-0 right-0 z-30 flex justify-center px-5 text-center">
