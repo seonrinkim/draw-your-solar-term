@@ -10,6 +10,15 @@ const HOVER_RADIUS = 160;
 const HOVER_TAP_SPEED = 4.5; // one-off velocity kick when the cursor first brushes a card, at point-blank range
 const BBOX_PADDING = 16; // canvas units of margin around each drawing's ink
 const FILL_RATIO_CAP = 0.8; // once occupied footprint hits ~80% of the screen, retire the oldest pieces
+const TOOLTIP_HOVER_DELAY = 900; // ms the mouse must rest on a card before its caption appears
+
+interface TooltipState {
+  id: string;
+  nickname: string;
+  note: string;
+  x: number; // viewport px, center of the card
+  y: number; // viewport px, top edge of the card
+}
 
 // Map a stroke's bounding-box longest side (in canvas units) to an
 // on-screen size, so small doodles stay small and bigger ones stay bigger.
@@ -54,7 +63,24 @@ export default function GravityGallery({ bottomInset = 0 }: GravityGalleryProps)
   const floorYRef = useRef(Infinity);
   const pointerRef = useRef<{ x: number; y: number } | null>(null);
   const tappedIdsRef = useRef<Set<string>>(new Set()); // ids currently inside the hover radius, already tapped
+  const tooltipTimeoutRef = useRef<number | null>(null);
   const [cards, setCards] = useState<CardMeta[]>([]);
+  const [tooltip, setTooltip] = useState<TooltipState | null>(null);
+
+  // Tap/click anywhere outside a card closes its caption. Each card's own
+  // click handler stops propagation, so this only ever sees "outside" taps.
+  useEffect(() => {
+    if (!tooltip) return;
+    const closeTooltip = () => setTooltip(null);
+    window.addEventListener("click", closeTooltip);
+    return () => window.removeEventListener("click", closeTooltip);
+  }, [tooltip]);
+
+  useEffect(() => {
+    return () => {
+      if (tooltipTimeoutRef.current !== null) window.clearTimeout(tooltipTimeoutRef.current);
+    };
+  }, []);
 
   useEffect(() => {
     bottomInsetRef.current = bottomInset;
@@ -389,7 +415,51 @@ export default function GravityGallery({ bottomInset = 0 }: GravityGalleryProps)
           }}
           className="absolute top-0 left-0 will-change-transform cursor-grab active:cursor-grabbing drop-shadow-[0_2px_6px_rgba(39,32,24,0.25)]"
           style={{ width: card.width, height: card.height }}
-          title={`${card.drawing.nickname} — ${card.drawing.note}`}
+          onMouseEnter={(e) => {
+            const el = e.currentTarget;
+            if (tooltipTimeoutRef.current !== null) window.clearTimeout(tooltipTimeoutRef.current);
+            tooltipTimeoutRef.current = window.setTimeout(() => {
+              const rect = el.getBoundingClientRect();
+              setTooltip({
+                id: card.id,
+                nickname: card.drawing.nickname,
+                note: card.drawing.note,
+                x: rect.left + rect.width / 2,
+                y: rect.top,
+              });
+            }, TOOLTIP_HOVER_DELAY);
+          }}
+          onMouseLeave={() => {
+            if (tooltipTimeoutRef.current !== null) {
+              window.clearTimeout(tooltipTimeoutRef.current);
+              tooltipTimeoutRef.current = null;
+            }
+            setTooltip((prev) => (prev?.id === card.id ? null : prev));
+          }}
+          onClick={(e) => {
+            // Desktop: reveal immediately on click too, not just after the
+            // hover delay. Mobile has no hover at all, so this is the only
+            // way a tap shows the caption — stopPropagation keeps the
+            // window-level "click outside closes it" listener from firing
+            // for this same tap.
+            e.stopPropagation();
+            if (tooltipTimeoutRef.current !== null) {
+              window.clearTimeout(tooltipTimeoutRef.current);
+              tooltipTimeoutRef.current = null;
+            }
+            const rect = e.currentTarget.getBoundingClientRect();
+            setTooltip((prev) =>
+              prev?.id === card.id
+                ? null
+                : {
+                    id: card.id,
+                    nickname: card.drawing.nickname,
+                    note: card.drawing.note,
+                    x: rect.left + rect.width / 2,
+                    y: rect.top,
+                  }
+            );
+          }}
         >
           <svg
             viewBox={`${card.bbox.minX} ${card.bbox.minY} ${card.bbox.width} ${card.bbox.height}`}
@@ -409,6 +479,15 @@ export default function GravityGallery({ bottomInset = 0 }: GravityGalleryProps)
           </svg>
         </div>
       ))}
+      {tooltip && (
+        <div
+          className="pointer-events-none fixed z-50 max-w-[65vw] -translate-x-1/2 -translate-y-[calc(100%+10px)] rounded-lg bg-ink px-3 py-2 text-xs text-hanji shadow-lg sm:max-w-xs sm:text-sm"
+          style={{ left: tooltip.x, top: tooltip.y }}
+        >
+          <div className="font-medium">{tooltip.nickname}</div>
+          <div className="opacity-80">{tooltip.note}</div>
+        </div>
+      )}
     </div>
   );
 }
