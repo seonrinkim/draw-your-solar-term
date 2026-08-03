@@ -11,6 +11,7 @@ const HOVER_TAP_SPEED = 4.5; // one-off velocity kick when the cursor first brus
 const BBOX_PADDING = 16; // canvas units of margin around each drawing's ink
 const FILL_RATIO_CAP = 0.8; // once occupied footprint hits ~80% of the screen, retire the oldest pieces
 const TOOLTIP_HOVER_DELAY = 900; // ms the mouse must rest on a card before its caption appears
+const TAP_MOVE_TOLERANCE = 10; // px of finger movement still counted as a tap, not a drag
 
 interface TooltipState {
   id: string;
@@ -65,16 +66,25 @@ export default function GravityGallery({ bottomInset = 0 }: GravityGalleryProps)
   const tappedIdsRef = useRef<Set<string>>(new Set()); // ids currently inside the hover radius, already tapped
   const tooltipTimeoutRef = useRef<number | null>(null);
   const tooltipRef = useRef<HTMLDivElement>(null);
+  const touchStartRef = useRef<{ x: number; y: number } | null>(null);
   const [cards, setCards] = useState<CardMeta[]>([]);
   const [tooltip, setTooltip] = useState<TooltipState | null>(null);
 
   // Tap/click anywhere outside a card closes its caption. Each card's own
-  // click handler stops propagation, so this only ever sees "outside" taps.
+  // click/touchend handler stops propagation, so this only ever sees
+  // "outside" taps. Both events are listened for: Matter's Mouse module
+  // calls preventDefault() on every touchstart/touchend inside the gallery
+  // (see the mouseConstraint setup below), which suppresses the browser's
+  // synthetic click on touch devices, so "click" alone never fires on mobile.
   useEffect(() => {
     if (!tooltip) return;
     const closeTooltip = () => setTooltip(null);
     window.addEventListener("click", closeTooltip);
-    return () => window.removeEventListener("click", closeTooltip);
+    window.addEventListener("touchend", closeTooltip);
+    return () => {
+      window.removeEventListener("click", closeTooltip);
+      window.removeEventListener("touchend", closeTooltip);
+    };
   }, [tooltip]);
 
   // Keep the caption bubble on-screen for cards near an edge. `tooltip.x/y`
@@ -468,11 +478,48 @@ export default function GravityGallery({ bottomInset = 0 }: GravityGalleryProps)
           }}
           onClick={(e) => {
             // Desktop: reveal immediately on click too, not just after the
-            // hover delay. Mobile has no hover at all, so this is the only
-            // way a tap shows the caption — stopPropagation keeps the
-            // window-level "click outside closes it" listener from firing
-            // for this same tap.
+            // hover delay. stopPropagation keeps the window-level "click
+            // outside closes it" listener from firing for this same tap.
             e.stopPropagation();
+            if (tooltipTimeoutRef.current !== null) {
+              window.clearTimeout(tooltipTimeoutRef.current);
+              tooltipTimeoutRef.current = null;
+            }
+            const rect = e.currentTarget.getBoundingClientRect();
+            setTooltip((prev) =>
+              prev?.id === card.id
+                ? null
+                : {
+                    id: card.id,
+                    nickname: card.drawing.nickname,
+                    note: card.drawing.note,
+                    x: rect.left + rect.width / 2,
+                    y: rect.top,
+                  }
+            );
+          }}
+          onTouchStart={(e) => {
+            const touch = e.touches[0];
+            touchStartRef.current = { x: touch.clientX, y: touch.clientY };
+          }}
+          onTouchEnd={(e) => {
+            // Mobile has no hover, and Matter's Mouse module preventDefaults
+            // every touch in this container (see the tooltip-close effect
+            // above), which silently kills the synthetic click event browsers
+            // would otherwise fire — so tapping a card never reached the
+            // onClick handler above. This is the only way a tap reveals the
+            // caption on touch devices. stopPropagation keeps the
+            // window-level "tap outside closes it" listener from firing for
+            // this same tap. A small movement tolerance tells a tap apart
+            // from a drag-to-throw gesture on the card.
+            e.stopPropagation();
+            const start = touchStartRef.current;
+            touchStartRef.current = null;
+            if (!start) return;
+            const touch = e.changedTouches[0];
+            const dx = touch.clientX - start.x;
+            const dy = touch.clientY - start.y;
+            if (Math.sqrt(dx * dx + dy * dy) > TAP_MOVE_TOLERANCE) return;
             if (tooltipTimeoutRef.current !== null) {
               window.clearTimeout(tooltipTimeoutRef.current);
               tooltipTimeoutRef.current = null;

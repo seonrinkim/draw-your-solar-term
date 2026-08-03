@@ -66,7 +66,7 @@ export default function TermDetail({ term }: { term: SolarTerm }) {
           className="w-full sm:w-auto px-8 py-3 rounded-full text-base transition-opacity disabled:opacity-30 disabled:cursor-not-allowed"
           style={{ backgroundColor: term.color, color: textColor }}
         >
-          Let&apos;s draw!
+          Draw!
         </button>
       </div>
     </main>
