@@ -74,7 +74,7 @@ export default function Home() {
             href="/draw"
             className="px-5 py-2.5 rounded-full text-sm sm:text-base bg-ink text-hanji hover:opacity-85 transition-opacity"
           >
-            I want to draw!
+            Draw!
           </Link>
         </div>
       </div>
