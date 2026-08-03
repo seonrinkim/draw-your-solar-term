@@ -6,6 +6,7 @@ import { SolarTerm } from "@/lib/terms";
 import { StrokePath, submitDrawing } from "@/lib/drawings";
 import { CANVAS_WIDTH, CANVAS_HEIGHT } from "@/lib/canvas";
 import { mirrorToGoogle } from "@/lib/mirror";
+import { useLanguage } from "@/lib/i18n";
 import DrawingCanvas from "@/components/DrawingCanvas";
 
 type Step = "draw" | "submit";
@@ -13,6 +14,7 @@ const CANVAS_ASPECT = CANVAS_WIDTH / CANVAS_HEIGHT;
 
 export default function CanvasFlow({ term }: { term: SolarTerm }) {
   const router = useRouter();
+  const { t } = useLanguage();
   const [step, setStep] = useState<Step>("draw");
   const [strokes, setStrokes] = useState<StrokePath[]>([]);
   const [nickname, setNickname] = useState("");
@@ -75,7 +77,7 @@ export default function CanvasFlow({ term }: { term: SolarTerm }) {
       });
       router.push("/");
     } catch {
-      setError("Something went wrong while submitting. Please try again.");
+      setError(t.errorMessage);
       setSubmitting(false);
     }
   };
@@ -88,7 +90,7 @@ export default function CanvasFlow({ term }: { term: SolarTerm }) {
             onClick={() => setStep("draw")}
             className="text-sm opacity-60 hover:opacity-100 mb-6"
           >
-            ← Back to drawing
+            {t.backToDrawing}
           </button>
 
           <div className="flex items-center gap-2 mb-6">
@@ -101,22 +103,20 @@ export default function CanvasFlow({ term }: { term: SolarTerm }) {
             </h1>
           </div>
 
-          <label className="block text-sm opacity-70 mb-2">Nickname</label>
+          <label className="block text-sm opacity-70 mb-2">{t.nicknameLabel}</label>
           <input
             type="text"
             value={nickname}
             onChange={(e) => setNickname(e.target.value.slice(0, 40))}
-            placeholder="What should we call you?"
+            placeholder={t.nicknamePlaceholder}
             className="w-full rounded-xl border border-ink/15 bg-white/60 px-4 py-3 text-base mb-5 outline-none focus:border-ink/40"
           />
 
-          <label className="block text-sm opacity-70 mb-2">
-            Why did you draw this?
-          </label>
+          <label className="block text-sm opacity-70 mb-2">{t.noteLabel}</label>
           <textarea
             value={note}
             onChange={(e) => setNote(e.target.value.slice(0, 280))}
-            placeholder="A short note about your drawing..."
+            placeholder={t.notePlaceholder}
             rows={4}
             className="w-full rounded-xl border border-ink/15 bg-white/60 px-4 py-3 text-base mb-2 outline-none focus:border-ink/40 resize-none"
           />
@@ -186,7 +186,7 @@ export default function CanvasFlow({ term }: { term: SolarTerm }) {
             disabled={strokes.length === 0}
             className="text-sm opacity-70 hover:opacity-100 disabled:opacity-25"
           >
-            Undo
+            {t.undo}
           </button>
           <span className="opacity-20">|</span>
           <button
@@ -194,7 +194,7 @@ export default function CanvasFlow({ term }: { term: SolarTerm }) {
             disabled={strokes.length === 0}
             className="text-sm opacity-70 hover:opacity-100 disabled:opacity-25"
           >
-            Clear
+            {t.clear}
           </button>
         </div>
       </div>

@@ -39,7 +39,13 @@ function displaySizeFor(bbox: BoundingBox): { width: number; height: number } {
   return { width: bbox.width * scale, height: bbox.height * scale };
 }
 
-export default function GravityGallery() {
+interface GravityGalleryProps {
+  // Reserve this many px at the bottom of the container so the physics
+  // floor sits above fixed UI (e.g. footer text), keeping the pile visible.
+  bottomInset?: number;
+}
+
+export default function GravityGallery({ bottomInset = 0 }: GravityGalleryProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const engineRef = useRef<Matter.Engine | null>(null);
   const bodiesRef = useRef<Map<string, Matter.Body>>(new Map());
@@ -47,7 +53,14 @@ export default function GravityGallery() {
   const wallsRef = useRef<Matter.Body[]>([]);
   const orderRef = useRef<string[]>([]); // insertion order, oldest first
   const occupiedAreaRef = useRef(0);
+  const bottomInsetRef = useRef(bottomInset);
+  const buildWallsRef = useRef<(() => void) | null>(null);
   const [cards, setCards] = useState<CardMeta[]>([]);
+
+  useEffect(() => {
+    bottomInsetRef.current = bottomInset;
+    buildWallsRef.current?.();
+  }, [bottomInset]);
 
   // Occupied-area bookkeeping happens at the call site (before removal),
   // since that's where we know the card's display width/height.
@@ -175,10 +188,11 @@ export default function GravityGallery() {
 
     const buildWalls = () => {
       const { width, height } = container.getBoundingClientRect();
+      const floorY = height - bottomInsetRef.current;
       wallsRef.current.forEach((w) => Matter.World.remove(engine.world, w));
       const floor = Matter.Bodies.rectangle(
         width / 2,
-        height + WALL_THICKNESS / 2,
+        floorY + WALL_THICKNESS / 2,
         width * 3,
         WALL_THICKNESS,
         { isStatic: true }
@@ -201,6 +215,7 @@ export default function GravityGallery() {
       Matter.World.add(engine.world, wallsRef.current);
     };
 
+    buildWallsRef.current = buildWalls;
     buildWalls();
     const onResize = () => buildWalls();
     window.addEventListener("resize", onResize);

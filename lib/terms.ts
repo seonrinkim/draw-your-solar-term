@@ -32,7 +32,7 @@ export const SOLAR_TERMS: SolarTerm[] = [
     color: "#3E3428",
     description: "The first stirrings of warmth beneath still-cold soil.",
     wisdom:
-      "Families used to paste handwritten couplets called ipchuncheop on their gates and doorframes, wishing for good fortune and abundance in the year ahead.",
+      "Families used to paste handwritten couplets called ipchuncheop (입춘첩) on their gates and doorframes, wishing for good fortune and abundance in the year ahead.",
   },
   {
     slug: "usu",
@@ -80,7 +80,7 @@ export const SOLAR_TERMS: SolarTerm[] = [
     color: "#90B47E",
     description: "Skies clear and fields brighten for the season's planting.",
     wisdom:
-      "Falling near the Hansik holiday, this was traditionally a day to visit and tend ancestral graves, and some households ate only food prepared the day before, keeping the hearth fire unlit out of old custom.",
+      "Falling near the Hansik (한식) holiday, this was traditionally a day to visit and tend ancestral graves, and some households ate only food prepared the day before, keeping the hearth fire unlit out of old custom.",
   },
   {
     slug: "gogu",
@@ -92,7 +92,7 @@ export const SOLAR_TERMS: SolarTerm[] = [
     color: "#83B995",
     description: "Gentle rains nourish the newly sown grain.",
     wisdom:
-      "This was considered the best time to tap gorosoe trees for their sap, drunk as a spring tonic, while rice farmers began wet-seeding paddies as the rains soaked into the soil.",
+      "This was considered the best time to tap gorosoe (고로쇠) trees for their sap, drunk as a spring tonic, while rice farmers began wet-seeding paddies as the rains soaked into the soil.",
   },
   {
     slug: "ipha",
@@ -116,7 +116,7 @@ export const SOLAR_TERMS: SolarTerm[] = [
     color: "#84C2B6",
     description: "Crops fill out under the strengthening early summer sun.",
     wisdom:
-      "As barley began to fill out in the fields, households busied themselves with irrigation and weeding, preparing for the harvest rush that Mangjong would soon bring.",
+      "As barley began to fill out in the fields, households busied themselves with irrigation and weeding, preparing for the harvest rush that Mangjong (망종) would soon bring.",
   },
   {
     slug: "mangjong",
@@ -152,7 +152,7 @@ export const SOLAR_TERMS: SolarTerm[] = [
     color: "#75BD81",
     description: "Humid heat settles in as the rainy season peaks.",
     wisdom:
-      "As Korea's monsoon season (jangma) set in, households reinforced roofs and drainage against flooding and shifted to cooling, easily digestible meals to handle the thickening humidity.",
+      "As Korea's monsoon season, jangma (장마), set in, households reinforced roofs and drainage against flooding and shifted to cooling, easily digestible meals to handle the thickening humidity.",
   },
   {
     slug: "daeseo",
@@ -164,7 +164,7 @@ export const SOLAR_TERMS: SolarTerm[] = [
     color: "#C0C059",
     description: "The hottest days of the year, thick with summer haze.",
     wisdom:
-      "Falling within the sambok dog days, this was when people ate hot samgyetang, believing in \"fighting heat with heat,\" and wore loose hemp sambe clothing that let air move against the skin.",
+      "Falling within the sambok (삼복) dog days, this was when people ate hot samgyetang (삼계탕), believing in \"fighting heat with heat,\" and wore loose hemp sambe (삼베) clothing that let air move against the skin.",
   },
   {
     slug: "ipchu",
@@ -200,7 +200,7 @@ export const SOLAR_TERMS: SolarTerm[] = [
     color: "#C66839",
     description: "Cool nights leave dew glistening white on the grass.",
     wisdom:
-      "With cool morning dew now settling on the fields, families began preparing for the rice harvest and for Chuseok, the autumn harvest festival that often falls close behind.",
+      "With cool morning dew now settling on the fields, families began preparing for the rice harvest and for Chuseok (추석), the autumn harvest festival that often falls close behind.",
   },
   {
     slug: "chubun",
@@ -212,7 +212,7 @@ export const SOLAR_TERMS: SolarTerm[] = [
     color: "#C94A1E",
     description: "Day and night balance again as leaves turn to color.",
     wisdom:
-      "As day and night balanced once more, this was a season for giving thanks — tending family graves and sharing the year's harvest, echoing the same spirit of gratitude at the heart of Chuseok.",
+      "As day and night balanced once more, this was a season for giving thanks — tending family graves and sharing the year's harvest, echoing the same spirit of gratitude at the heart of Chuseok (추석).",
   },
   {
     slug: "hallo",
@@ -224,7 +224,7 @@ export const SOLAR_TERMS: SolarTerm[] = [
     color: "#9D4125",
     description: "Dew turns cold as autumn deepens toward winter.",
     wisdom:
-      "As chrysanthemums came into bloom, people traditionally drank gukhwaju, chrysanthemum-infused wine, and took autumn outings into the hills to admire the turning leaves before the cold set in fully.",
+      "As chrysanthemums came into bloom, people traditionally drank gukhwaju (국화주), chrysanthemum-infused wine, and took autumn outings into the hills to admire the turning leaves before the cold set in fully.",
   },
   {
     slug: "sanggang",
@@ -248,7 +248,7 @@ export const SOLAR_TERMS: SolarTerm[] = [
     color: "#4A3526",
     description: "The air sharpens as the land prepares to rest.",
     wisdom:
-      "This was traditionally when kimjang began — whole families and neighbors gathering to prepare enough kimchi to last the household through the long winter ahead.",
+      "This was traditionally when kimjang (김장) began — whole families and neighbors gathering to prepare enough kimchi to last the household through the long winter ahead.",
   },
   {
     slug: "soseol",
@@ -284,7 +284,7 @@ export const SOLAR_TERMS: SolarTerm[] = [
     color: "#272018",
     description: "The longest night of the year, deep and still.",
     wisdom:
-      "On the year's longest night, families ate patjuk, red bean porridge with chewy rice balls, said to ward off evil spirits — and everyone added one rice ball for each year of their age.",
+      "On the year's longest night, families ate patjuk (팥죽), red bean porridge with chewy rice balls, said to ward off evil spirits — and everyone added one rice ball for each year of their age.",
   },
   {
     slug: "sohan",
@@ -296,7 +296,7 @@ export const SOLAR_TERMS: SolarTerm[] = [
     color: "#1C1612",
     description: "The coldest stretch of the year begins to bite.",
     wisdom:
-      "Despite its name, Sohan is often colder than Daehan that follows it — an old saying jokes that \"Daehan froze to death visiting Sohan's house,\" and households used this stretch to stock up on food and firewood.",
+      "Despite its name, Sohan is often colder than Daehan (대한) that follows it — an old saying jokes that \"Daehan froze to death visiting Sohan's house,\" and households used this stretch to stock up on food and firewood.",
   },
   {
     slug: "daehan",
@@ -308,7 +308,7 @@ export const SOLAR_TERMS: SolarTerm[] = [
     color: "#15110F",
     description: "The year's harshest cold, just before spring returns.",
     wisdom:
-      "As the last solar term of the year, Daehan was traditionally spent finishing year-end chores and rites to send off the old year, so the household could greet Ipchun and the new cycle of spring with a clean start.",
+      "As the last solar term of the year, Daehan was traditionally spent finishing year-end chores and rites to send off the old year, so the household could greet Ipchun (입춘) and the new cycle of spring with a clean start.",
   },
 ];
 
@@ -316,25 +316,42 @@ export function getTermBySlug(slug: string): SolarTerm | undefined {
   return SOLAR_TERMS.find((t) => t.slug === slug);
 }
 
-const MONTH_NAMES = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
-];
+const MONTH_NAMES: Record<"en" | "nl", string[]> = {
+  en: [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ],
+  nl: [
+    "januari",
+    "februari",
+    "maart",
+    "april",
+    "mei",
+    "juni",
+    "juli",
+    "augustus",
+    "september",
+    "oktober",
+    "november",
+    "december",
+  ],
+};
 
-// "03-20" -> "20 March"
-export function formatTermDate(mmdd: string): string {
+// "03-20" -> "20 March" (en) / "20 maart" (nl) / "3월 20일" (ko)
+export function formatTermDate(mmdd: string, language: "en" | "ko" | "nl" = "en"): string {
   const [month, day] = mmdd.split("-").map(Number);
-  return `${day} ${MONTH_NAMES[month - 1]}`;
+  if (language === "ko") return `${month}월 ${day}일`;
+  return `${day} ${MONTH_NAMES[language][month - 1]}`;
 }
 
 export const BRAND_COLORS = {
