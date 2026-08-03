@@ -14,7 +14,7 @@ export default function Header() {
     <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-5 py-4 sm:px-8 sm:py-5 pointer-events-none">
       <Link
         href="/"
-        className="pointer-events-auto text-base sm:text-lg tracking-tight text-ink hover:opacity-70 transition-opacity"
+        className="pointer-events-auto translate-y-2 text-base sm:text-lg tracking-tight text-ink hover:opacity-70 transition-opacity"
       >
         Van het Seizoen
       </Link>
