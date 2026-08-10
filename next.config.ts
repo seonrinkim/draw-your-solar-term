@@ -1,12 +1,9 @@
 import type { NextConfig } from "next";
 
-// GitHub Pages serves this as a project site at
-// https://seonrinkim.github.io/draw-your-solar-term/ — static export with a
-// matching basePath/assetPrefix so built asset URLs resolve under that
-// subpath. Only applied for the GitHub Pages build so local `next dev`
-// still runs at the site root.
-const isGithubPagesBuild = process.env.GITHUB_PAGES === "true";
-const basePath = isGithubPagesBuild ? "/draw-your-solar-term" : "";
+// Custom domain (vanhetseizoen.nl, see public/CNAME) serves this at the
+// domain root, so no basePath/assetPrefix subpath is needed for the
+// GitHub Pages build anymore.
+const basePath = "";
 
 const nextConfig: NextConfig = {
   devIndicators: false,
