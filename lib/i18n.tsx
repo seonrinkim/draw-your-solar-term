@@ -36,6 +36,9 @@ interface UiStrings {
   aboutProjectBody2: string;
   aboutSchedule: string;
   aboutCopyright: string;
+  aboutInstagramHandle: string;
+  aboutInstagramUrl: string;
+  aboutEmail: string;
 }
 
 export const UI_STRINGS: Record<Language, UiStrings> = {
@@ -75,6 +78,9 @@ export const UI_STRINGS: Record<Language, UiStrings> = {
     aboutSchedule:
       "22 September – 4 October 2026 | 09:00 – 22:00 | Amsterdam House of Arts & Crafts (Oudeschans 21, 1011 KS Amsterdam)",
     aboutCopyright: "Copyright 2026 Season Diplomats. All rights reserved.",
+    aboutInstagramHandle: "@van_het_seizoen",
+    aboutInstagramUrl: "https://www.instagram.com/van_het_seizoen/",
+    aboutEmail: "invisiblehandsstudio@gmail.com",
   },
   ko: {
     selectHeading: "절기를 선택하세요",
@@ -112,6 +118,9 @@ export const UI_STRINGS: Record<Language, UiStrings> = {
     aboutSchedule:
       "2026년 9월 22일 – 10월 4일 | 09:00 – 22:00 | Amsterdam House of Arts & Crafts (Oudeschans 21, 1011 KS Amsterdam)",
     aboutCopyright: "Copyright 2026 Season Diplomats. All rights reserved.",
+    aboutInstagramHandle: "@season_diplomats",
+    aboutInstagramUrl: "https://www.instagram.com/season_diplomats/",
+    aboutEmail: "invisiblehandsstudio@gmail.com",
   },
   nl: {
     selectHeading: "Kies je zonneterm",
@@ -149,6 +158,9 @@ export const UI_STRINGS: Record<Language, UiStrings> = {
     aboutSchedule:
       "22 september – 4 oktober 2026 | 09:00 – 22:00 | Amsterdam House of Arts & Crafts (Oudeschans 21, 1011 KS Amsterdam)",
     aboutCopyright: "Copyright 2026 Season Diplomats. All rights reserved.",
+    aboutInstagramHandle: "@van_het_seizoen",
+    aboutInstagramUrl: "https://www.instagram.com/van_het_seizoen/",
+    aboutEmail: "invisiblehandsstudio@gmail.com",
   },
 };
 

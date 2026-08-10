@@ -31,7 +31,26 @@ export default function AboutPage() {
           </p>
         </section>
 
-        <p className="text-xs sm:text-sm opacity-40">{t.aboutCopyright}</p>
+        <div className="text-xs sm:text-sm opacity-40 space-y-1">
+          <p>{t.aboutCopyright}</p>
+          <p>
+            Instagram:{" "}
+            <a
+              href={t.aboutInstagramUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline hover:opacity-100"
+            >
+              {t.aboutInstagramHandle}
+            </a>
+          </p>
+          <p>
+            Email:{" "}
+            <a href={`mailto:${t.aboutEmail}`} className="underline hover:opacity-100">
+              {t.aboutEmail}
+            </a>
+          </p>
+        </div>
       </div>
     </main>
   );
