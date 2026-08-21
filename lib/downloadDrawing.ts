@@ -8,8 +8,7 @@ const TEXT_PADDING = 64;
 const TITLE_SIZE = 40;
 const BODY_SIZE = 32;
 const LINE_HEIGHT = 46;
-const BG_PAPER = "#F4F0E6";
-const BG_IMAGE = "#FCFCFB";
+const BACKGROUND = "#FCFCFB"; // matches the page's --background, same as the feed card
 const TEXT_COLOR = "#272018";
 
 // Canvas has no built-in text wrapping, and character-level wrapping (rather
@@ -56,7 +55,7 @@ export async function downloadDrawingImage(
 
   const measure = document.createElement("canvas").getContext("2d");
   if (!measure) return;
-  measure.font = `600 ${BODY_SIZE}px ${fontFamily}`;
+  measure.font = `${BODY_SIZE}px ${fontFamily}`;
   const noteLines = note ? wrapText(measure, note, maxTextWidth) : [];
 
   const captionHeight =
@@ -71,10 +70,8 @@ export async function downloadDrawingImage(
   const ctx = canvas.getContext("2d");
   if (!ctx) return;
 
-  ctx.fillStyle = BG_PAPER;
+  ctx.fillStyle = BACKGROUND;
   ctx.fillRect(0, 0, canvas.width, canvas.height);
-  ctx.fillStyle = BG_IMAGE;
-  ctx.fillRect(0, 0, CANVAS_WIDTH, IMAGE_HEIGHT);
 
   const availW = CANVAS_WIDTH - IMAGE_PADDING * 2;
   const availH = IMAGE_HEIGHT - IMAGE_PADDING * 2;
@@ -96,7 +93,7 @@ export async function downloadDrawingImage(
 
   ctx.fillStyle = TEXT_COLOR;
   ctx.textBaseline = "alphabetic";
-  ctx.font = `600 ${TITLE_SIZE}px ${fontFamily}`;
+  ctx.font = `500 ${TITLE_SIZE}px ${fontFamily}`;
   let cursorY = IMAGE_HEIGHT + TEXT_PADDING + TITLE_SIZE * 0.8;
   ctx.fillText(titleText, TEXT_PADDING, cursorY);
 
