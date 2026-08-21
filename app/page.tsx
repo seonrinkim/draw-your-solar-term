@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import GravityGallery from "@/components/GravityGallery";
+import BoardFeed from "@/components/BoardFeed";
 import { LANGUAGES, Language, useLanguage } from "@/lib/i18n";
 
 const LANGUAGE_LABELS: Record<Language, string> = {
@@ -11,12 +12,15 @@ const LANGUAGE_LABELS: Record<Language, string> = {
   nl: "NL",
 };
 
+type ViewMode = "gallery" | "board";
+
 const FOOTER_GAP = 4; // breathing room between the drawing pile and the footer text
 
 export default function Home() {
   const { language, setLanguage, t } = useLanguage();
   const footerRef = useRef<HTMLParagraphElement>(null);
   const [bottomInset, setBottomInset] = useState(0);
+  const [view, setView] = useState<ViewMode>("gallery");
 
   useEffect(() => {
     const el = footerRef.current;
@@ -38,16 +42,33 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="relative h-[100dvh] w-full overflow-hidden">
-      <GravityGallery bottomInset={bottomInset} />
+    <div
+      className={
+        view === "gallery"
+          ? "relative h-[100dvh] w-full overflow-hidden"
+          : "relative min-h-[100dvh] w-full"
+      }
+    >
+      {view === "gallery" ? <GravityGallery bottomInset={bottomInset} /> : <BoardFeed />}
 
-      <div className="pointer-events-none fixed top-0 left-0 right-0 z-40 flex items-center justify-between gap-3 px-5 py-4 sm:px-8 sm:py-5">
-        <Link
-          href="/"
-          className="pointer-events-auto text-base sm:text-lg tracking-tight text-ink hover:opacity-70 transition-opacity"
-        >
-          Van het Seizoen
-        </Link>
+      <div className="pointer-events-none fixed top-0 left-0 right-0 z-40 flex items-start justify-between gap-3 px-5 py-4 sm:px-8 sm:py-5">
+        <div className="pointer-events-auto flex flex-col items-start gap-1.5">
+          <Link
+            href="/"
+            className="text-base sm:text-lg tracking-tight text-ink hover:opacity-70 transition-opacity"
+          >
+            Van het Seizoen
+          </Link>
+          <select
+            value={view}
+            onChange={(e) => setView(e.target.value as ViewMode)}
+            aria-label="View"
+            className="rounded-full bg-ink/5 px-2.5 py-1 text-xs text-ink/60 cursor-pointer focus:outline-none focus:ring-1 focus:ring-ink/20 hover:bg-ink/10 transition-colors"
+          >
+            <option value="gallery">{t.viewGallery}</option>
+            <option value="board">{t.viewBoard}</option>
+          </select>
+        </div>
         <div className="pointer-events-auto flex items-center gap-3">
           <Link
             href="/about"
