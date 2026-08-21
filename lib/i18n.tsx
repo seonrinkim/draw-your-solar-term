@@ -40,9 +40,9 @@ interface UiStrings {
   aboutInstagramUrl: string;
   aboutEmail: string;
   viewGallery: string;
-  viewBoard: string;
+  viewPlayground: string;
   downloadLabel: string;
-  emptyBoardMessage: string;
+  emptyGalleryMessage: string;
 }
 
 export const UI_STRINGS: Record<Language, UiStrings> = {
@@ -86,9 +86,9 @@ export const UI_STRINGS: Record<Language, UiStrings> = {
     aboutInstagramUrl: "https://www.instagram.com/van_het_seizoen/",
     aboutEmail: "invisiblehandsstudio@gmail.com",
     viewGallery: "Gallery view",
-    viewBoard: "Board view",
+    viewPlayground: "Playground view",
     downloadLabel: "Download image",
-    emptyBoardMessage: "No drawings yet — be the first to add one.",
+    emptyGalleryMessage: "No drawings yet — be the first to add one.",
   },
   ko: {
     selectHeading: "절기를 선택하세요",
@@ -130,9 +130,9 @@ export const UI_STRINGS: Record<Language, UiStrings> = {
     aboutInstagramUrl: "https://www.instagram.com/season_diplomats/",
     aboutEmail: "invisiblehandsstudio@gmail.com",
     viewGallery: "갤러리 뷰",
-    viewBoard: "보드 뷰",
+    viewPlayground: "놀이터 뷰",
     downloadLabel: "이미지 다운로드",
-    emptyBoardMessage: "아직 그림이 없어요. 첫 번째 그림을 남겨보세요.",
+    emptyGalleryMessage: "아직 그림이 없어요. 첫 번째 그림을 남겨보세요.",
   },
   nl: {
     selectHeading: "Kies je zonneterm",
@@ -174,9 +174,9 @@ export const UI_STRINGS: Record<Language, UiStrings> = {
     aboutInstagramUrl: "https://www.instagram.com/van_het_seizoen/",
     aboutEmail: "invisiblehandsstudio@gmail.com",
     viewGallery: "Galerijweergave",
-    viewBoard: "Bordweergave",
+    viewPlayground: "Speeltuinweergave",
     downloadLabel: "Afbeelding downloaden",
-    emptyBoardMessage: "Nog geen tekeningen — wees de eerste.",
+    emptyGalleryMessage: "Nog geen tekeningen — wees de eerste.",
   },
 };
 
