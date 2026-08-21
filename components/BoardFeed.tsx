@@ -54,7 +54,7 @@ export default function BoardFeed() {
 
         return (
           <article key={drawing.id} className="border-b border-ink/10 py-6 first:pt-0 last:border-b-0">
-            <div className="aspect-square w-full overflow-hidden rounded-2xl bg-ink/5">
+            <div className="aspect-square w-full overflow-hidden rounded-2xl">
               <svg
                 viewBox={`${bbox.minX} ${bbox.minY} ${bbox.width} ${bbox.height}`}
                 className="h-full w-full"
@@ -99,7 +99,7 @@ export default function BoardFeed() {
       })}
 
       {drawings.length === 0 && (
-        <p className="py-16 text-center text-sm opacity-40">{t.emptyBoardMessage}</p>
+        <p className="py-16 text-center text-sm opacity-40">{t.emptyGalleryMessage}</p>
       )}
     </div>
   );
