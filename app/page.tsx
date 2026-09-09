@@ -102,7 +102,7 @@ export default function Home() {
 
       <div className="pointer-events-none fixed bottom-6 left-0 right-0 z-30 flex justify-center px-5 text-center">
         <p ref={footerRef} className="text-xs sm:text-sm opacity-40">
-          22 September – 4 October 2026 | 09:00 – 21:00 | Amsterdam House of
+          22 September – 4 October 2026 | 11:00 – 18:00 | Amsterdam House of
           Arts &amp; Crafts (Oudeschans 21, 1011 KS Amsterdam)
         </p>
       </div>

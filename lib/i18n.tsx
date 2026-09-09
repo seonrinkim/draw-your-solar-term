@@ -78,9 +78,9 @@ export const UI_STRINGS: Record<Language, UiStrings> = {
     aboutProjectBody1:
       "Van het Seizoen is a non-commercial exhibition organized by four Korean students living in the Netherlands. It sets Korea's 24 solar terms beside the Dutch seasons, showing through photographs and climate data how the boundaries between seasons are shifting in both countries. Korean seasonal wisdom — ondol floor heating, fermentation, eating with the season — is reintroduced as everyday climate practice, and visitors finish the exhibition by making their own seasonal record.",
     aboutProjectBody2:
-      "This project has been selected as part of the Ministry of Foreign Affairs of the Republic of Korea's 2026 People-led Public Diplomacy programme.",
+      "This project has been supported by the Ministry of Foreign Affairs of the Republic of Korea as one of the 2026 People-led Public Diplomacy projects.",
     aboutSchedule:
-      "22 September – 4 October 2026 | 09:00 – 22:00 | Amsterdam House of Arts & Crafts (Oudeschans 21, 1011 KS Amsterdam)",
+      "22 September – 4 October 2026 | 11:00 – 18:00 | Amsterdam House of Arts & Crafts (Oudeschans 21, 1011 KS Amsterdam)",
     aboutCopyright: "Copyright 2026 Season Diplomats. All rights reserved.",
     aboutInstagramHandle: "@van_het_seizoen",
     aboutInstagramUrl: "https://www.instagram.com/van_het_seizoen/",
@@ -122,9 +122,9 @@ export const UI_STRINGS: Record<Language, UiStrings> = {
     aboutProjectBody1:
       "Van het Seizoen은 네덜란드에 거주하는 네 명의 한국인 유학생이 기획한 비영리 전시로, 한국의 24절기와 네덜란드의 사계절을 나란히 놓고 기후변화로 흔들리는 계절의 경계를 사진과 기후 데이터로 보여줍니다. 온돌, 발효, 제철 음식 등 절기 속에 담긴 한국의 지혜를 오늘의 기후 실천으로 소개하며, 관람객이 직접 참여해 자신만의 계절 기록을 남기는 것으로 마무리됩니다.",
     aboutProjectBody2:
-      "이 프로젝트는 대한민국 외교부의 2026 국민공공외교 사업으로 선정되어 진행됩니다.",
+      "이 프로젝트는 대한민국 외교부의 2026 국민공공외교 사업의 하나로 지원을 받았습니다.",
     aboutSchedule:
-      "2026년 9월 22일 – 10월 4일 | 09:00 – 22:00 | Amsterdam House of Arts & Crafts (Oudeschans 21, 1011 KS Amsterdam)",
+      "2026년 9월 22일 – 10월 4일 | 11:00 – 18:00 | Amsterdam House of Arts & Crafts (Oudeschans 21, 1011 KS Amsterdam)",
     aboutCopyright: "Copyright 2026 Season Diplomats. All rights reserved.",
     aboutInstagramHandle: "@season_diplomats",
     aboutInstagramUrl: "https://www.instagram.com/season_diplomats/",
@@ -166,9 +166,9 @@ export const UI_STRINGS: Record<Language, UiStrings> = {
     aboutProjectBody1:
       "Van het Seizoen is een non-commerciële tentoonstelling, georganiseerd door vier Koreaanse studenten die in Nederland wonen. De tentoonstelling zet de 24 Koreaanse zonnetermen naast de Nederlandse seizoenen en laat met foto's en klimaatdata zien hoe de grenzen tussen de seizoenen in beide landen verschuiven. Koreaanse seizoenswijsheid — zoals ondol-vloerverwarming, fermentatie en eten met het seizoen — wordt opnieuw geïntroduceerd als alledaagse klimaatpraktijk, en bezoekers sluiten de tentoonstelling af door hun eigen seizoensregister te maken.",
     aboutProjectBody2:
-      "Dit project is geselecteerd als onderdeel van het 2026 People-led Public Diplomacy-programma van het Ministerie van Buitenlandse Zaken van de Republiek Korea.",
+      "Dit project is ondersteund door het Ministerie van Buitenlandse Zaken van de Republiek Korea als een van de 2026 People-led Public Diplomacy-projecten.",
     aboutSchedule:
-      "22 september – 4 oktober 2026 | 09:00 – 22:00 | Amsterdam House of Arts & Crafts (Oudeschans 21, 1011 KS Amsterdam)",
+      "22 september – 4 oktober 2026 | 11:00 – 18:00 | Amsterdam House of Arts & Crafts (Oudeschans 21, 1011 KS Amsterdam)",
     aboutCopyright: "Copyright 2026 Season Diplomats. All rights reserved.",
     aboutInstagramHandle: "@van_het_seizoen",
     aboutInstagramUrl: "https://www.instagram.com/van_het_seizoen/",
