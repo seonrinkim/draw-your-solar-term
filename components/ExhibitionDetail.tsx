@@ -46,27 +46,27 @@ export default function ExhibitionDetail({
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-white p-4 sm:p-8"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4 sm:p-8"
       onClick={onClose}
     >
       <div
-        className="relative flex w-full max-w-4xl flex-col overflow-hidden rounded-sm border-2 border-exhibit-line bg-exhibit-paper sm:h-[85vh] sm:flex-row"
+        className="relative flex w-full max-w-4xl flex-col overflow-hidden rounded-sm border-2 border-exhibit-line bg-white sm:h-[85vh] sm:flex-row"
         onClick={(e) => e.stopPropagation()}
       >
         <button
           onClick={onClose}
           aria-label="Close"
-          className="absolute right-3 top-3 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-exhibit-paper/80 text-exhibit-line hover:bg-exhibit-paper"
+          className="absolute right-3 top-3 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-white/80 text-exhibit-line hover:bg-white"
         >
           ✕
         </button>
 
-        <div className="relative flex h-64 shrink-0 items-center justify-center bg-exhibit-line/5 sm:h-full sm:w-3/5">
+        <div className="relative flex h-64 shrink-0 items-center justify-center bg-white sm:h-full sm:w-3/5">
           {photos.length > 1 && (
             <button
               onClick={() => onIndexChange((index - 1 + photos.length) % photos.length)}
               aria-label="Previous"
-              className="absolute left-2 top-1/2 z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-exhibit-paper/80 text-lg text-exhibit-line hover:bg-exhibit-paper"
+              className="absolute left-2 top-1/2 z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-white/80 text-lg text-exhibit-line hover:bg-white"
             >
               ‹
             </button>
@@ -85,7 +85,7 @@ export default function ExhibitionDetail({
             <button
               onClick={() => onIndexChange((index + 1) % photos.length)}
               aria-label="Next"
-              className="absolute right-2 top-1/2 z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-exhibit-paper/80 text-lg text-exhibit-line hover:bg-exhibit-paper"
+              className="absolute right-2 top-1/2 z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-white/80 text-lg text-exhibit-line hover:bg-white"
             >
               ›
             </button>
@@ -129,7 +129,7 @@ export default function ExhibitionDetail({
             <a
               href={photo.photo}
               download
-              className="mt-6 inline-block rounded-full border border-exhibit-line px-4 py-2 text-xs text-exhibit-line hover:bg-exhibit-line hover:text-exhibit-paper transition-colors"
+              className="mt-6 inline-block rounded-full border border-exhibit-line px-4 py-2 text-xs text-exhibit-line hover:bg-exhibit-line hover:text-white transition-colors"
             >
               {t.downloadLabel}
             </a>
