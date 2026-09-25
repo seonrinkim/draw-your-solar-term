@@ -7,6 +7,10 @@
   --color-mugwort: #8a9e6a;
   --color-ink: #272018;
 
+  --color-exhibit-line: #120a00;
+  --color-exhibit-fill: #969089;
+  --color-exhibit-paper: #fffbef;
+
   --background: #fcfcfb;
   --foreground: var(--color-ink);
 }
@@ -19,6 +23,9 @@
   --color-persimmon: var(--color-persimmon);
   --color-mugwort: var(--color-mugwort);
   --color-ink: var(--color-ink);
+  --color-exhibit-line: var(--color-exhibit-line);
+  --color-exhibit-fill: var(--color-exhibit-fill);
+  --color-exhibit-paper: var(--color-exhibit-paper);
   --font-sans: var(--font-pretendard);
 }
 

@@ -43,6 +43,7 @@ interface UiStrings {
   viewPlayground: string;
   downloadLabel: string;
   emptyGalleryMessage: string;
+  exhibitionLabel: string;
 }
 
 export const UI_STRINGS: Record<Language, UiStrings> = {
@@ -89,6 +90,7 @@ export const UI_STRINGS: Record<Language, UiStrings> = {
     viewPlayground: "Playground view",
     downloadLabel: "Download image",
     emptyGalleryMessage: "No drawings yet — be the first to add one.",
+    exhibitionLabel: "Exhibition floor plan",
   },
   ko: {
     selectHeading: "절기를 선택하세요",
@@ -133,6 +135,7 @@ export const UI_STRINGS: Record<Language, UiStrings> = {
     viewPlayground: "놀이터 뷰",
     downloadLabel: "이미지 다운로드",
     emptyGalleryMessage: "아직 그림이 없어요. 첫 번째 그림을 남겨보세요.",
+    exhibitionLabel: "전시 배치도",
   },
   nl: {
     selectHeading: "Kies je zonneterm",
@@ -177,6 +180,7 @@ export const UI_STRINGS: Record<Language, UiStrings> = {
     viewPlayground: "Speeltuinweergave",
     downloadLabel: "Afbeelding downloaden",
     emptyGalleryMessage: "Nog geen tekeningen — wees de eerste.",
+    exhibitionLabel: "Plattegrond tentoonstelling",
   },
 };
 

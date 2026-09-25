@@ -106,6 +106,13 @@ export default function Home() {
           Arts &amp; Crafts (Oudeschans 21, 1011 KS Amsterdam)
         </p>
       </div>
+
+      <Link
+        href="/exhibition"
+        aria-label={t.exhibitionLabel}
+        style={{ bottom: bottomInset + 10 }}
+        className="fixed right-5 z-40 h-14 w-14 rounded-full bg-celadon shadow-md transition-transform hover:scale-105 sm:right-8"
+      />
     </div>
   );
 }

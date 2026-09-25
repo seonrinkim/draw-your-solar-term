@@ -1,0 +1,1170 @@
+{
+  "wallImage": "/exhibition/wall.jpg",
+  "items": [
+    {
+      "id": "artwork-01",
+      "type": "artwork",
+      "x": 83.34,
+      "y": 56.52,
+      "w": 4,
+      "h": 13.7,
+      "number": "a-6",
+      "photo": "/exhibition/photos/a-6.jpeg",
+      "country": "KR",
+      "season": "Spring",
+      "photographer": "박지은",
+      "date": "29 March, 2025",
+      "pastPresent": "Present",
+      "i18n": {
+        "ko": {
+          "title": "지금 눈이 온다고?",
+          "desc": "3월말 봄날을 예상하며 놀이공원에 갔는데, 눈이 펑펑 쏟아져서 당황했습니다. 눈이 정말 많이 쏟아져서 그치기를 기다리다가 결국 입장하지 않고 돌아왔어요."
+        },
+        "en": {
+          "title": "Snowing Right Now?",
+          "desc": "I went to an amusement park expecting a spring day at the end of March, but I was so taken aback because it started pouring down snow. It snowed so hard that I waited for it to stop, but in the end, I just turned back home without even entering."
+        },
+        "nl": {
+          "title": "Sneeuw, Nu Al?",
+          "desc": "Eind maart ging ik naar een pretpark in de verwachting van een lentedag, maar ik was totaal flabbergasted toen het opeens keihard begon te sneeuwen. Het sneeuwde zo hard dat ik heb gewacht tot het ophield, maar uiteindelijk ben ik maar omgedraaid zonder überhaupt naar binnen te gaan."
+        }
+      }
+    },
+    {
+      "id": "artwork-02",
+      "type": "artwork",
+      "x": 78.71,
+      "y": 56.52,
+      "w": 4,
+      "h": 13.7,
+      "number": "a-28",
+      "photo": "/exhibition/photos/a-28.jpeg",
+      "country": "KR",
+      "season": "Spring",
+      "photographer": "신가영",
+      "date": "2024년 4월",
+      "pastPresent": "Present",
+      "i18n": {
+        "ko": {
+          "title": "어제 분명히 따뜻했음",
+          "desc": "기숙사 앞에서 찍었던 사진입니다. 분명히 어제 따뜻했는데 갑자기 폭설이 내렸어요."
+        },
+        "en": {
+          "title": "It was definitely warm yesterday",
+          "desc": "I took this picture in front of my dorm. It was definitely warm yesterday, but it heavily snowed all of a sudden."
+        },
+        "nl": {
+          "title": "Gisteren was het absoluut warm",
+          "desc": "Ik heb deze foto voor mijn studentenflat genomen. Gisteren was het nog zo warm, maar ineens begon het hard te sneeuwen."
+        }
+      }
+    },
+    {
+      "id": "artwork-03",
+      "type": "artwork",
+      "x": 88.63,
+      "y": 24.39,
+      "w": 4,
+      "h": 13.7,
+      "number": "a-3",
+      "photo": "/exhibition/photos/a-3.jpeg",
+      "country": "KR",
+      "season": "Spring",
+      "photographer": "다연",
+      "date": "February 2026",
+      "pastPresent": "Present",
+      "i18n": {
+        "ko": {
+          "title": "미세먼지와 황사를 머금은 풍경",
+          "desc": "차를 타고 이동하던 중 바깥을 보았더니 심각한 미세먼지와 황사로 인해 경치가 너무 뿌옇게 보였어요."
+        },
+        "en": {
+          "title": "Landscape Shrouded in Fine Dust and Yellow Dust.",
+          "desc": "While traveling by car, I looked outside, and the scenery was so blurry and hazy due to the severe fine dust and yellow dust."
+        },
+        "nl": {
+          "title": "Een Landschap Gehuld in Geel Stof en Fijnstof",
+          "desc": "Toen ik in de auto zat en naar buiten keek, was het uitzicht door het ernstige fijnstof en geel stof ontzettend wazig en grauw."
+        }
+      }
+    },
+    {
+      "id": "artwork-04",
+      "type": "artwork",
+      "x": 74.07,
+      "y": 32.93,
+      "w": 4,
+      "h": 13.7,
+      "number": "a-2",
+      "photo": "/exhibition/photos/a-2.jpeg",
+      "country": "NL",
+      "season": "Spring",
+      "photographer": "Dolce",
+      "date": "18 April, 2021",
+      "pastPresent": "Present",
+      "i18n": {
+        "ko": {
+          "title": "얼어붙은 명이나물",
+          "desc": "명이가 가득한 숲으로 갔는데 4월인데도 눈이 내려서 명이 옆에 눈이 와 있었어요."
+        },
+        "en": {
+          "title": "Frozen Ramsons",
+          "desc": "I went to a forest full of ramsons (wild garlic). Even though it was April, it was snowing, and there was snow right next to the ramsons."
+        },
+        "nl": {
+          "title": "Bevroren Daslook",
+          "desc": "Ik ging naar een bos vol daslook. Hoewel het april was, sneeuwde het en lag er sneeuw vlak naast de daslook."
+        }
+      }
+    },
+    {
+      "id": "artwork-05",
+      "type": "artwork",
+      "x": 60.8,
+      "y": 31.18,
+      "w": 4,
+      "h": 13.7,
+      "number": "a-19",
+      "photo": "/exhibition/photos/a-19.jpeg",
+      "country": "KR",
+      "season": "Summer",
+      "photographer": "곽진서",
+      "date": "Summer 2025",
+      "pastPresent": "Present",
+      "i18n": {
+        "ko": {
+          "title": "폭염",
+          "desc": "사진은 좋아 보이지만 작년 이맘때 살인적인 더위와 습도에 정말 살인당할 뻔했다"
+        },
+        "en": {
+          "title": "Heatwave",
+          "desc": "The photo looks nice, but around this time last year, I almost got killed by the murderous heat and humidity."
+        },
+        "nl": {
+          "title": "Hittegolf",
+          "desc": "De foto ziet er goed uit, maar rond deze tijd vorig jaar werd ik bijna vermoord door de moordende hitte en vochtigheid."
+        }
+      }
+    },
+    {
+      "id": "artwork-06",
+      "type": "artwork",
+      "x": 65.44,
+      "y": 31.24,
+      "w": 4,
+      "h": 13.7,
+      "number": "a-18",
+      "photo": "/exhibition/photos/a-18.jpeg",
+      "country": "KR",
+      "season": "Summer",
+      "photographer": "정승혁",
+      "date": "Summer 2026",
+      "pastPresent": "Present",
+      "i18n": {
+        "ko": {
+          "title": "절대 밖으로 나가지 마",
+          "desc": "전북 익산입니다. 미술관으로 들어가는 입구인데, 햇볕이 뜨거워 사람들이 그늘 아래로만 걸어갑니다"
+        },
+        "en": {
+          "title": "Do not go outside",
+          "desc": "This is Iksan, Jeonbuk. It's the entrance to an art museum, and the sun is so scorching hot that people are only walking under the shade."
+        },
+        "nl": {
+          "title": "Waag Het Niet Om Naar Buiten Te Gaan",
+          "desc": "Dit is Iksan, Jeonbuk. Het is de ingang van een kunstmuseum, en de zon brandt zo hard dat mensen alleen maar in de schaduw lopen."
+        }
+      }
+    },
+    {
+      "id": "artwork-07",
+      "type": "artwork",
+      "x": 54.59,
+      "y": 53.15,
+      "w": 4,
+      "h": 13.7,
+      "number": "a-16",
+      "photo": "/exhibition/photos/a-16.jpeg",
+      "country": "KR",
+      "season": "Summer",
+      "photographer": "최예진",
+      "date": "4 April, 2024",
+      "pastPresent": "Present",
+      "i18n": {
+        "ko": {
+          "title": "비 때문에 한껏 지친 나….",
+          "desc": "전주에 촬영하러 다녀왔었는데 미친 듯이 비가 오고 태풍이 불었어요 ㅠㅠ 너무 힘들었어요"
+        },
+        "en": {
+          "title": "Completely Exhausted by the Rain…",
+          "desc": "I went to Jeonju for a shoot, and it rained like crazy, and a typhoon was blowing… It was so exhausting."
+        },
+        "nl": {
+          "title": "Helemaal Uitgeput Door de Regen…",
+          "desc": "Ik was in Jeonju voor een fotoshoot, maar het regende echt pijpenstelen en er raasde een tyfoon ㅠㅠ Het was zo ontzettend zwaar."
+        }
+      }
+    },
+    {
+      "id": "artwork-08",
+      "type": "artwork",
+      "x": 50,
+      "y": 53.15,
+      "w": 4,
+      "h": 13.7,
+      "number": "a-17",
+      "photo": "/exhibition/photos/a-17.jpeg",
+      "country": "KR",
+      "season": "Summer",
+      "photographer": "곽윤서",
+      "date": "Summer 2026",
+      "pastPresent": "Present",
+      "i18n": {
+        "ko": {
+          "title": "폭우슬라이드",
+          "desc": "이날 비가 너무 많이 와서 내리막길 내려가다 미끄러져 자빠졌는데 워터슬라이드처럼 쭉 타고 내려감"
+        },
+        "en": {
+          "title": "Heavy Rain Slide",
+          "desc": "It rained so hard that day; I slipped while walking down a downhill path and wiped out, then slid all the way down like a waterslide."
+        },
+        "nl": {
+          "title": "Stortregen-glijbaan",
+          "desc": "Het regende die dag zo hard; ik gleed uit op een helling, ging keihard onderuit en gleed toen als een soort waterglijbaan helemaal naar beneden."
+        }
+      }
+    },
+    {
+      "id": "artwork-09",
+      "type": "artwork",
+      "x": 50,
+      "y": 39.03,
+      "w": 4,
+      "h": 13.7,
+      "number": "a-20",
+      "photo": "/exhibition/photos/a-20.jpeg",
+      "country": "KR",
+      "season": "Summer",
+      "photographer": "전시언",
+      "date": "Summer 2026",
+      "pastPresent": "",
+      "i18n": {
+        "ko": {
+          "title": "습도90%면 인어공주가 살기엔 조금 부족하네",
+          "desc": "습도가 너무 높았어요"
+        },
+        "en": {
+          "title": "90% Humidity is a Bit Short for the Little Mermaid to Live in.",
+          "desc": "The humidity was just way too high."
+        },
+        "nl": {
+          "title": "Met 90% Luchtvochtigheid Komt de Kleine Zeemeermin Net Tekort",
+          "desc": "De luchtvochtigheid was echt veel te hoog."
+        }
+      }
+    },
+    {
+      "id": "artwork-10",
+      "type": "artwork",
+      "x": 44.1,
+      "y": 7.08,
+      "w": 4,
+      "h": 13.7,
+      "number": "a-7",
+      "photo": "/exhibition/photos/a-7.jpeg",
+      "country": "NL",
+      "season": "Summer",
+      "photographer": "Dolce",
+      "date": "28 June, 2026",
+      "pastPresent": "Present",
+      "i18n": {
+        "ko": {
+          "title": "타버린 깻잎",
+          "desc": "발코니에서 키우던 깻잎이 유럽 폭염기간동안 햇빛이 너무 세서 탔어요…"
+        },
+        "en": {
+          "title": "Burnt Perilla Leaves",
+          "desc": "The perilla leaves I was growing on the balcony got burnt because the sunlight was too intense during the European heatwave..."
+        },
+        "nl": {
+          "title": "Verbrande Perillablaadjes",
+          "desc": "De perillablaadjes die ik op het balkon kweekte, zijn verbrand omdat het zonlicht tijdens de Europese hittegolf te intens was..."
+        }
+      }
+    },
+    {
+      "id": "artwork-11",
+      "type": "artwork",
+      "x": 44.1,
+      "y": 22.36,
+      "w": 4,
+      "h": 13.7,
+      "number": "a-8",
+      "photo": "/exhibition/photos/a-8.jpeg",
+      "country": "NL",
+      "season": "Summer",
+      "photographer": "Nana",
+      "date": "Summer 2026",
+      "pastPresent": "Present",
+      "i18n": {
+        "ko": {
+          "title": "텅텅",
+          "desc": "폭염 기간 동안 식료품점의 냉장고들이 텅 빌 정도였습니다."
+        },
+        "en": {
+          "title": "Empty",
+          "desc": "The fridges at the grocery stores were empty during the heatwave."
+        },
+        "nl": {
+          "title": "Leeg",
+          "desc": "De koelkasten in de supermarkten waren leeg tijdens de hittegolf."
+        }
+      }
+    },
+    {
+      "id": "artwork-12",
+      "type": "artwork",
+      "x": 35.63,
+      "y": 39.03,
+      "w": 4,
+      "h": 13.7,
+      "number": "a-10",
+      "photo": "/exhibition/photos/a-10.jpeg",
+      "country": "NL",
+      "season": "Summer",
+      "photographer": "Kimmy",
+      "date": "23 August, 2026",
+      "pastPresent": "Present",
+      "i18n": {
+        "ko": {
+          "title": "추운 여름",
+          "desc": "여름에도 겨울 외투가 필요할 수 있습니다. 날씨가 어떻게 바뀔지 전혀 알 수 없기 때문입니다."
+        },
+        "en": {
+          "title": "Cold summer",
+          "desc": "Even in summer, you may need a winter jacket. Cuz you never know how the weather will change."
+        },
+        "nl": {
+          "title": "Koude zomer",
+          "desc": "Zelfs in de zomer heb je misschien een winterjas nodig. Je weet namelijk nooit hoe het weer zal omslaan."
+        }
+      }
+    },
+    {
+      "id": "artwork-13",
+      "type": "artwork",
+      "x": 30.97,
+      "y": 39.03,
+      "w": 4,
+      "h": 13.7,
+      "number": "a-14",
+      "photo": "/exhibition/photos/a-14.jpeg",
+      "country": "NL",
+      "season": "Summer",
+      "photographer": "Alonso",
+      "date": "22 August, 2026",
+      "pastPresent": "Present",
+      "i18n": {
+        "ko": {
+          "title": "고통받는 네덜란드의 잔디",
+          "desc": "친구 생일 파티로 공원에서 피크닉을 했는데, 잔디가 바짝 말라 있는 게 자꾸 눈에 밟혔습니다. 네덜란드에서는 참 낯선 풍경인데, 비 없는 날씨와 강한 햇빛이 지속되면서 잔디가 다 말라버린 것입니다."
+        },
+        "en": {
+          "title": "Struggling Dutch Grass",
+          "desc": "My friend’s birthday celebration was a picnic in the park, but we couldn’t help but notice that the grass was dry. For the Netherlands, this is strange, but the days without rain and lots of sun dried out the grass."
+        },
+        "nl": {
+          "title": "Worstelen met het Nederlandse Gras",
+          "desc": "De verjaardag van mijn vriend werd gevierd met een picknick in het park, maar het viel ons meteen op dat het gras gortdroog was. Voor Nederland is dit vreemd, maar de dagen zonder regen en de felle zon hebben het gras volledig uitgedroogd."
+        }
+      }
+    },
+    {
+      "id": "artwork-14",
+      "type": "artwork",
+      "x": 26.31,
+      "y": 39.03,
+      "w": 4,
+      "h": 13.7,
+      "number": "a-13",
+      "photo": "/exhibition/photos/a-13.jpeg",
+      "country": "NL",
+      "season": "Summer",
+      "photographer": "Kim, Seonrang",
+      "date": "21 August, 2026",
+      "pastPresent": "Present",
+      "i18n": {
+        "ko": {
+          "title": "지금은 8월인데도 우리는 가을 속에 살고 있어요.",
+          "desc": "8월이지만 낙엽은 벌써 떨어졌습니다."
+        },
+        "en": {
+          "title": "We are living in autumn even though it's August now.",
+          "desc": "It's August, but already the leaves have fallen."
+        },
+        "nl": {
+          "title": "We leven in de herfst, ook al is het nu augustus.",
+          "desc": "Het is augustus, maar de bladeren zijn al gevallen."
+        }
+      }
+    },
+    {
+      "id": "artwork-15",
+      "type": "artwork",
+      "x": 21.76,
+      "y": 39.03,
+      "w": 4,
+      "h": 13.7,
+      "number": "a-15",
+      "photo": "/exhibition/photos/a-15.jpeg",
+      "country": "NL",
+      "season": "Summer",
+      "photographer": "Lee, Nayoung",
+      "date": "August 2026",
+      "pastPresent": "Present",
+      "i18n": {
+        "ko": {
+          "title": "여름임을 잊은 8월",
+          "desc": "8월이었고 모든 것이 여전히 한여름의 짙은 녹음에 둘러싸여 있었지만, 오직 이 작은 나뭇잎 한 무리만은 달랐습니다. 마치 주변의 다른 것들과는 전혀 다른 계절을 살고 있는 듯, 그것들은 이미 갈색으로 변해 있었습니다. 순간 가을이 엉뚱한 시간, 엉뚱한 장소에 실수로 찾아온 것만 같은 기분이 들었습니다."
+        },
+        "en": {
+          "title": "August Forgot It Was Summer",
+          "desc": "It was August, and everything was still wrapped in the deep green of summer, except for this one small patch of leaves. They had already turned brown, as if they were living in a different season from everything around them. For a moment, it felt like autumn had accidentally arrived in the wrong place, at the wrong time."
+        },
+        "nl": {
+          "title": "Augustus Vergat dat het Zomer Was",
+          "desc": "Het was augustus en alles was nog gehuld in het diepe groen van de zomer, behalve dit ene kleine stukje bladeren. Ze waren al bruin geworden, alsof ze in een ander seizoen leefden dan al het andere om hen heen. Heel even voelde het alsof de herfst per ongeluk op de verkeerde plek en op het verkeerde moment was aangekomen."
+        }
+      }
+    },
+    {
+      "id": "artwork-16",
+      "type": "artwork",
+      "x": 33.97,
+      "y": 53.15,
+      "w": 5.66,
+      "h": 9.69,
+      "number": "a-9",
+      "photo": "/exhibition/photos/a-9.jpeg",
+      "country": "NL",
+      "season": "Summer",
+      "photographer": "Kimmy",
+      "date": "20 August, 2026",
+      "pastPresent": "Present",
+      "i18n": {
+        "ko": {
+          "title": "8월의 플리스",
+          "desc": "Q. 누가 8월에 플리스를 입냐고요?\nA. 네덜란드 사람들이요"
+        },
+        "en": {
+          "title": "Fleece in August",
+          "desc": "Q. Who wears fleece in August? \nA. The Dutches."
+        },
+        "nl": {
+          "title": "Fleece in Augustus",
+          "desc": "V. Wie draagt er fleece in augustus? \nAntw. De Nederlanders."
+        }
+      }
+    },
+    {
+      "id": "artwork-17",
+      "type": "artwork",
+      "x": 9.5,
+      "y": 31.24,
+      "w": 4,
+      "h": 13.7,
+      "number": "a-25",
+      "photo": "/exhibition/photos/a-25.jpeg",
+      "country": "KR",
+      "season": "Winter",
+      "photographer": "지가연",
+      "date": "27 November, 2024",
+      "pastPresent": "Present",
+      "i18n": {
+        "ko": {
+          "title": "가을 위에 겨울",
+          "desc": "단풍이 채 지지 않았을 무렵, 첫눈이 내렸습니다. 가을 위에 겨울이 살포시 내려앉은 풍경이 낯설면서도 보기 좋습니다."
+        },
+        "en": {
+          "title": "Winter Atop Autumn",
+          "desc": "An early first snow fell around the time when the autumn leaves hadn't even faded yet. The landscape of winter gently settling on top of autumn feels unfamiliar, yet it is beautiful to look at."
+        },
+        "nl": {
+          "title": "Winter Op de Herfst",
+          "desc": "De vroege eerste sneeuw viel rond de tijd dat de herfstbladeren nog niet eens waren gevallen. Het landschap waarin de winter zich zachtjes over de herfst heen vlijt voelt onwennig, maar is prachtig om te zien."
+        }
+      }
+    },
+    {
+      "id": "artwork-18",
+      "type": "artwork",
+      "x": 4.86,
+      "y": 31.24,
+      "w": 4,
+      "h": 13.7,
+      "number": "a-26",
+      "photo": "/exhibition/photos/a-26.jpeg",
+      "country": "KR",
+      "season": "Winter",
+      "photographer": "민지",
+      "date": "Late Autumn 2024",
+      "pastPresent": "Present",
+      "i18n": {
+        "ko": {
+          "title": "가을이 겨울을 만난날",
+          "desc": "새내기 시절 등굣길인데 한창 가을이라 단풍이 만개했었는데 갑자기 어느날 눈이 내려서 단풍 위에 눈이 쌓였어요."
+        },
+        "en": {
+          "title": "The Day Autumn Met Winter",
+          "desc": "This was my commute to school back when I was a freshman. Autumn was in full swing and the leaves were at their peak, but then one day it suddenly snowed, and snow piled up on top of the autumn leaves."
+        },
+        "nl": {
+          "title": "De Dag dat de Herfst de Winter Ontmoette",
+          "desc": "Dit was mijn route naar school toen ik nog een eerstejaars student was. De herfst was in volle gang en de herfstkleuren waren op hun mooist, maar op een dag begon het opeens te sneeuwen en hoopte de sneeuw zich op de gekleurde bladeren op."
+        }
+      }
+    },
+    {
+      "id": "artwork-19",
+      "type": "artwork",
+      "x": 12.75,
+      "y": 73.14,
+      "w": 4,
+      "h": 13.7,
+      "number": "a-24",
+      "photo": "/exhibition/photos/a-24.jpeg",
+      "country": "NL",
+      "season": "Winter",
+      "photographer": "Buitenkamp, Niels",
+      "date": "10 January, 2026",
+      "pastPresent": "Present",
+      "i18n": {
+        "ko": {
+          "title": "온 나라를 얼리다",
+          "desc": "이번 겨울, 예기치 못한 눈보라가 네덜란드를 덮쳤습니다. 그 결과 모든 자전거 도로와 일반 도로가 막혔고 전력 부족 사태가 발생했습니다."
+        },
+        "en": {
+          "title": "Freeze the whole country",
+          "desc": "This winter, an unexpected snowstorm hit the Netherlands. As a consequence of this, all the bike roads and main roads were blocked, and there was an electrical power shortage."
+        },
+        "nl": {
+          "title": "Het hele land bevriezen",
+          "desc": "Deze winter werd Nederland getroffen door een onverwachte sneeuwstorm. Als gevolg hiervan raakten alle fietspaden en wegen geblokkeerd en was er een stroomtekort."
+        }
+      }
+    },
+    {
+      "id": "artwork-20",
+      "type": "artwork",
+      "x": 8.11,
+      "y": 73.14,
+      "w": 4,
+      "h": 13.7,
+      "number": "a-23",
+      "photo": "/exhibition/photos/a-23.jpeg",
+      "country": "NL",
+      "season": "Winter",
+      "photographer": "Zin",
+      "date": "9 January, 2026",
+      "pastPresent": "Present",
+      "i18n": {
+        "ko": {
+          "title": "모든 것이 멈췄다",
+          "desc": "흐로닝언에는 눈이 거의 내리지 않는다고 들었는데 지난겨울에는 이례적인 폭설이 며칠 동안 이어졌습니다. 온 나라가 마비되고 학교가 문을 닫았으며 공급망이 끊겨 슈퍼마켓 진열대가 완전히 텅 비어 버렸던 기억이 납니다."
+        },
+        "en": {
+          "title": "All stopped",
+          "desc": "I heard that it rarely snows in Groningen. But last winter, exceptional heavy snowfall continued for days. I remember the entire country was stopped, schools closed and supply chains disrupted, leaving supermarket shelves completely empty."
+        },
+        "nl": {
+          "title": "Alles lag stil",
+          "desc": "Ik had gehoord dat het zelden sneeuwt in Groningen. Maar afgelopen winter hield de uitzonderlijk zware sneeuwval dagenlang aan. Ik herinner me dat het hele land stilbelaat, de scholen sloten en de toeleveringsketens verstoord raakten, waardoor de schappen in de supermarkt compleet leeg achterbleven."
+        }
+      }
+    },
+    {
+      "id": "artwork-22",
+      "type": "artwork",
+      "x": 40.31,
+      "y": 39.03,
+      "w": 8,
+      "h": 27.41,
+      "number": "a-12",
+      "photo": "/exhibition/photos/a-12.jpg",
+      "country": "NL",
+      "season": "Summer",
+      "photographer": "Nationaal Archief",
+      "date": "29 August, 1990",
+      "pastPresent": "Past",
+      "i18n": {
+        "ko": {
+          "title": "",
+          "desc": ""
+        },
+        "en": {
+          "title": "",
+          "desc": ""
+        },
+        "nl": {
+          "title": "Kinderen Spelen op het Strand bij Holle Poarte in Makkum",
+          "desc": ""
+        }
+      }
+    },
+    {
+      "id": "artwork-23",
+      "type": "artwork",
+      "x": 60.8,
+      "y": 1.8,
+      "w": 8,
+      "h": 27.41,
+      "number": "a-21",
+      "photo": "/exhibition/photos/a-21.JPG",
+      "country": "KR",
+      "season": "Summer",
+      "photographer": "Seoul Metropolitan Archives",
+      "date": "26 July, 1961",
+      "pastPresent": "Past",
+      "i18n": {
+        "ko": {
+          "title": "여름을 보내는 가정의 모습",
+          "desc": ""
+        },
+        "en": {
+          "title": "",
+          "desc": ""
+        },
+        "nl": {
+          "title": "",
+          "desc": ""
+        }
+      }
+    },
+    {
+      "id": "artwork-24",
+      "type": "artwork",
+      "x": 81.32,
+      "y": 4.24,
+      "w": 11.31,
+      "h": 19.38,
+      "number": "a-4",
+      "photo": "/exhibition/photos/a-4.JPG",
+      "country": "KR",
+      "season": "Spring",
+      "photographer": "Seoul Metropolitan Archives.",
+      "date": "",
+      "pastPresent": "Past",
+      "i18n": {
+        "ko": {
+          "title": "덕수궁 전경",
+          "desc": ""
+        },
+        "en": {
+          "title": "",
+          "desc": ""
+        },
+        "nl": {
+          "title": "",
+          "desc": ""
+        }
+      }
+    },
+    {
+      "id": "artwork-25",
+      "type": "artwork",
+      "x": 87.94,
+      "y": 50.85,
+      "w": 11.31,
+      "h": 19.38,
+      "number": "a-5",
+      "photo": "/exhibition/photos/a-5.JPG",
+      "country": "KR",
+      "season": "Spring",
+      "photographer": "Seoul Metropolitan Archives",
+      "date": "April 1988",
+      "pastPresent": "Past",
+      "i18n": {
+        "ko": {
+          "title": "덕수궁 풍경",
+          "desc": ""
+        },
+        "en": {
+          "title": "",
+          "desc": ""
+        },
+        "nl": {
+          "title": "",
+          "desc": ""
+        }
+      }
+    },
+    {
+      "id": "artwork-26",
+      "type": "artwork",
+      "x": 21.76,
+      "y": 53.15,
+      "w": 11.31,
+      "h": 19.38,
+      "number": "a-11",
+      "photo": "/exhibition/photos/a-11.jpg",
+      "country": "NL",
+      "season": "Summer",
+      "photographer": "Stadsarchief Rotterdam",
+      "date": "July 2024",
+      "pastPresent": "",
+      "i18n": {
+        "ko": {
+          "title": "",
+          "desc": ""
+        },
+        "en": {
+          "title": "",
+          "desc": ""
+        },
+        "nl": {
+          "title": "Bij een boom in een straat in Vreewijk...",
+          "desc": ""
+        }
+      }
+    },
+    {
+      "id": "artwork-27",
+      "type": "artwork",
+      "x": 8.11,
+      "y": 9.83,
+      "w": 11.31,
+      "h": 19.38,
+      "number": "a-27",
+      "photo": "/exhibition/photos/a-27.JPG",
+      "country": "KR",
+      "season": "Winter",
+      "photographer": "Seoul Metropolitan Archives",
+      "date": "23 December, 1963",
+      "pastPresent": "Past",
+      "i18n": {
+        "ko": {
+          "title": "구세군 자선냄비",
+          "desc": ""
+        },
+        "en": {
+          "title": "",
+          "desc": ""
+        },
+        "nl": {
+          "title": "",
+          "desc": ""
+        }
+      }
+    },
+    {
+      "id": "artwork-28",
+      "type": "artwork",
+      "x": 8.11,
+      "y": 51.79,
+      "w": 11.31,
+      "h": 19.38,
+      "number": "a-22",
+      "photo": "/exhibition/photos/a-22.jpg",
+      "country": "NL",
+      "season": "Winter",
+      "photographer": "Pot, Harry",
+      "date": "18 Jan, 1963",
+      "pastPresent": "Past",
+      "i18n": {
+        "ko": {
+          "title": "",
+          "desc": ""
+        },
+        "en": {
+          "title": "",
+          "desc": ""
+        },
+        "nl": {
+          "title": "Elfstedentocht 1963, Doorkomst te Sneek",
+          "desc": ""
+        }
+      }
+    },
+    {
+      "id": "context-02",
+      "type": "context",
+      "x": 93.26,
+      "y": 24.27,
+      "w": 6,
+      "h": 13.82,
+      "number": "c-9",
+      "source": "Source: Korea Meteorological Administration (KMA), Mongolian dust research cited in Korean press",
+      "relatedArtworkIds": [
+        "artwork-24",
+        "artwork-03"
+      ],
+      "relatedContextIds": [],
+      "i18n": {
+        "en": {
+          "desc": "On 22 February, 2026, cities in Korea, including Seoul, were covered by a haze of yellow dust (Hwangsa) and fine dust. As a result of this, the scenery appears grey and hazy. This is a rather familiar opening act to the Korean spring, and it is the norm. However, in the past, this did not occur as much as it does now. The issue is not the phenomenon itself; it is the frequency of its arrival. The yellow dust events in Korea today average around 9.5 times a year. Through the 1990s, though, it averaged about 3.3 times a year. So the number tripled.\n\nSo why is this happening? – Yellow dust is caused by dust blown from the Gobi and Inner Mongolian deserts. With the constant warming and drying of lands, desertification is gradually spreading across the lands of  Mongolia. As a result, dust-generating days have nearly tripled since 1960 as well."
+        },
+        "ko": {
+          "desc": "2026년 2월 22일, 서울을 비롯한 한국의 여러 도시들이 황사와 미세먼지로 뒤덮이며 뿌연 안개에 잠겼다. 그 결과 풍경은 온통 회색빛으로 흐릿하게 보였다. 이는 한국의 봄을 여는 익숙한 서막이자, 이제는 하나의 관례처럼 여겨진다. 하지만 과거에는 지금처럼 자주 일어나는 일이 아니었다. 문제는 이 현상 자체가 아니라, 그것이 찾아오는 빈도다. 오늘날 한국에서 황사는 평균적으로 연간 약 9.5회 발생한다. 반면 1990년대에는 연평균 약 3.3회에 불과했다. 즉, 그 횟수가 세 배 가까이 늘어난 것이다.\n\n그렇다면 왜 이런 일이 벌어질까? — 황사는 고비 사막과 내몽골 사막에서 날아오는 흙먼지 때문에 발생한다. 땅이 계속해서 따뜻해지고 건조해지면서, 몽골 지역 전역으로 사막화가 서서히 확산되고 있다. 그 결과, 먼지를 발생시키는 날의 수 또한 1960년 이후로 거의 세 배가 되었다."
+        },
+        "nl": {
+          "desc": "Op 22 februari 2026 werden steden in Korea, waaronder Seoel, bedekt door een waas van gele stof (hwangsa) en fijnstof. Hierdoor oogde het landschap grauw en waziger dan normaal. Dit is een vertrouwd openingsact van de Koreaanse lente en wordt inmiddels als de norm beschouwd. Vroeger kwam dit echter niet zo vaak voor als nu. Het probleem is niet het verschijnsel op zich, maar de frequentie ervan. De gele-stofgebeurtenissen in Korea komen tegenwoordig gemiddeld zo'n 9,5 keer per jaar voor. In de jaren negentig van de vorige eeuw was dat gemiddeld nog maar 3,3 keer per jaar. Het aantal is dus verdrievoudigd.\n\nWaarom gebeurt dit eigenlijk? Gele stof wordt veroorzaakt door stof dat wordt meegevoerd vanuit de Gobiwoestijn en de woestijnen van Binnen-Mongolië. Door de aanhoudende opwarming en uitdroging van het land breidt de verwoestijning zich geleidelijk uit over de landerijen van Mongolië. Als gevolg hiervan is het aantal dagen waarop stof ontstaat sinds 1960 eveneens bijna verdrievoudigd."
+        }
+      }
+    },
+    {
+      "id": "context-03",
+      "type": "context",
+      "x": 72.07,
+      "y": 47.57,
+      "w": 6,
+      "h": 8.95,
+      "number": "c-1",
+      "source": "",
+      "relatedArtworkIds": [
+        "artwork-31",
+        "artwork-04"
+      ],
+      "relatedContextIds": [
+        "c-10",
+        "c-2"
+      ],
+      "i18n": {
+        "en": {
+          "desc": "Ramsons are plants that bloom from April to June, and therefore their blooming is one of the symbols of the beginning of Spring. However, in April 2021, it bloomed under snow, as it marked the coldest the Netherlands has been since 1986.  It snowed throughout the month, filling the south-east part of the Netherlands with up to 10 cm of snow. Compare this to the photograph from 1932. There is no trace of cold there, as it is filled with beautiful trees and well-grown grass, with two girls wearing short-sleeved dresses. Now the current photograph seems a bit unusual, right?"
+        },
+        "ko": {
+          "desc": "명이나물(산마늘)은 4월부터 6월 사이에 꽃을 피우는 식물로, 그 개화가 봄의 시작을 알리는 상징 중 하나로 여겨진다. 그런데 2021년 4월, 명이나물은 눈 속에서 꽃을 피웠다 — 1986년 이후 네덜란드에서 가장 추운 4월이었기 때문이다. 한 달 내내 눈이 내려 네덜란드 남동부 지역에는 최대 10cm의 눈이 쌓였다. 1932년에 찍힌 사진과 비교해보자. 그 사진에는 추위의 흔적이 전혀 없다. 잘 자란 나무들과 푸르른 잔디, 그리고 반팔 원피스를 입은 두 소녀가 담겨 있을 뿐이다. 지금의 사진이 조금 낯설게 느껴지지 않는가?"
+        },
+        "nl": {
+          "desc": "Daslook is een plant die van april tot juni bloeit, en de bloei ervan geldt daarom als een van de symbolen van het begin van de lente. Maar in april 2021 bloeide de daslook onder de sneeuw — het was de koudste april die Nederland sinds 1986 had gekend. De hele maand sneeuwde het, waardoor in het zuidoosten van Nederland tot 10 cm sneeuw viel. Vergelijk dit met de foto uit 1932. Daar is geen spoor van kou te bekennen: mooie, weelderige bomen en goed gegroeid gras, met twee meisjes in jurkjes met korte mouwen. Vindt u de huidige foto niet een beetje ongewoon?"
+        }
+      }
+    },
+    {
+      "id": "context-04",
+      "type": "context",
+      "x": 72.07,
+      "y": 57.06,
+      "w": 6,
+      "h": 9.8,
+      "number": "c-10",
+      "source": "Source: KMA seasonal observation records",
+      "relatedArtworkIds": [
+        "artwork-01",
+        "artwork-02"
+      ],
+      "relatedContextIds": [
+        "c-1",
+        "c-2"
+      ],
+      "i18n": {
+        "en": {
+          "desc": "In the early 2025, Seoul was covered in snow up until April. It even snowed on April 13, 2025, and this was the first time in the recorded history that April snowfall actually took place, making it the latest snow Seoul had seen in the past 118 years. As seen in the picture, a tree is there, standing under the snow. Compared to that, in April 1988, cherry blossoms bloomed on top of freshly green grass with no trace of snow. This late snow is not just an isolated part; it is a visible piece of evidence of the growing gap between when spring falsely begins and when winter truly leaves."
+        },
+        "ko": {
+          "desc": "2025년 초, 서울은 4월까지도 눈으로 덮여 있었다. 심지어 4월 13일에도 눈이 내렸는데, 이는 관측 역사상 처음으로 4월에 눈이 기록된 사례이자, 지난 118년간 서울이 경험한 가장 늦은 봄눈이었다. 사진 속에는 눈을 뒤집어쓴 채 서 있는 나무 한 그루가 담겨 있다. 이와 대조적으로, 1988년 4월에는 눈의 흔적 하나 없이 갓 푸르러진 잔디밭 위로 벚꽃이 만개했다. 이 늦은 눈은 단순히 예외적인 하루가 아니다 — 봄이 거짓으로 시작되는 시점과 겨울이 진짜로 물러가는 시점 사이의 간극이 점점 벌어지고 있다는, 눈에 보이는 증거다."
+        },
+        "nl": {
+          "desc": "Begin 2025 lag Seoel tot in april onder de sneeuw. Op 13 april sneeuwde het zelfs nog — de eerste keer in de opgetekende geschiedenis dat er in april sneeuw viel, en daarmee de laatste sneeuwval die Seoel in 118 jaar heeft gekend. Op de foto staat een boom, roerloos in de sneeuw. Ter vergelijking: in april 1988 bloeiden de kersenbloesems boven vers groen gras, zonder een spoor van sneeuw. Deze late sneeuwval is niet zomaar een uitzonderlijke dag; het is tastbaar bewijs van de groeiende kloof tussen het moment waarop de lente zich vals aankondigt en het moment waarop de winter werkelijk vertrekt."
+        }
+      }
+    },
+    {
+      "id": "context-05",
+      "type": "context",
+      "x": 72.07,
+      "y": 67.49,
+      "w": 6,
+      "h": 12.5,
+      "number": "c-2",
+      "source": "Source: KNMI, De Natuurkalender (Wageningen University)",
+      "relatedArtworkIds": [
+        "artwork-31",
+        "artwork-04",
+        "artwork-25",
+        "artwork-01"
+      ],
+      "relatedContextIds": [
+        "c-1",
+        "c-10"
+      ],
+      "i18n": {
+        "en": {
+          "desc": "It isn’t just a coincidence that flowers and frost are colliding more and more recently. Dutch scientists named this phenomenon as, valse lente, which means “false spring”. In the early 1900s, the feeling of spring usually arrived around May 10 each year. Now, it falls around April 27, which is almost two weeks earlier compared to the past. As you might have guessed already, this is due to the warming of spring. In terms of numbers, the average temperature increased by more than 1.5°C. Even with all these changes, the date of the last hard frost has not moved as much. As a result of this, the flowers are arriving while the cold is still here."
+        },
+        "ko": {
+          "desc": "최근 들어 꽃과 서리가 점점 더 자주 충돌하는 것은 단순한 우연이 아니다. 네덜란드 과학자들은 이 현상에 '발서 렌테(valse lente)', 즉 '가짜 봄'이라는 이름을 붙였다. 1900년대 초만 해도 봄이 느껴지기 시작하는 시점은 대체로 매년 5월 10일 무렵이었다. 그런데 지금은 4월 27일 무렵으로 앞당겨졌다 — 예전보다 거의 2주나 빨라진 셈이다. 짐작하셨겠지만, 이는 봄철 기온 상승 때문이다. 수치로 보면 평균 기온이 1.5°C 넘게 올랐다. 하지만 이런 변화에도 마지막 강서리가 내리는 날짜는 그만큼 앞당겨지지 않았다. 그 결과, 추위가 채 가시기도 전에 꽃이 피어버리는 것이다."
+        },
+        "nl": {
+          "desc": "Het is geen toeval dat bloemen en vorst de laatste tijd steeds vaker samenvallen. Nederlandse wetenschappers noemen dit verschijnsel 'valse lente'. Begin twintigste eeuw voelde het begin van de lente doorgaans rond 10 mei aan. Nu valt dat rond 27 april — bijna twee weken eerder dan vroeger. Zoals u wellicht al vermoedde, komt dit door de opwarming van de lente: de gemiddelde temperatuur is met meer dan 1,5°C gestegen. Ondanks al deze veranderingen is de datum van de laatste strenge vorst nauwelijks verschoven. Het gevolg: de bloemen verschijnen terwijl de kou er nog is."
+        }
+      }
+    },
+    {
+      "id": "context-06",
+      "type": "context",
+      "x": 54.59,
+      "y": 19.71,
+      "w": 6,
+      "h": 18.38,
+      "number": "c-12",
+      "source": "Source: Korea Disease Control and Prevention Agency (KDCA)",
+      "relatedArtworkIds": [
+        "artwork-05",
+        "artwork-09"
+      ],
+      "relatedContextIds": [],
+      "i18n": {
+        "en": {
+          "desc": "Heatwave\n\nIn a 1961 photograph, a family cooling off outdoors in a simple basin of water was a modest, joyful response to a Korean summer. Fast forward to the summer of 2026 outside a museum plaza, and that simple relationship with heat is gone: now, every single visitor is forced into a narrow strip of shade along the building's edge. Heat is imposing a small, involuntary choreography on the crowd. Today, shade itself has become infrastructure people must plan their movements around, largely because the night no longer offers relief either. \n\nThis is mainly because the night no longer offers relief. In 2024, Korea recorded an average of 20.2 tropical nights nationwide, which is more than triple the historical norm, meaning the intense humidity prevents the human body from recovering after sunset. This relentless thermal strain reached a breaking point in 2025, sending 4,460 people to emergency rooms for heat-related illnesses. It stands as the second-highest toll since tracking began in 2011, narrowly trailing the catastrophic summer of 2018 (4,526 patients)."
+        },
+        "ko": {
+          "desc": "폭염\n\n1961년의 사진 속에서, 한 가족이 소박한 대야 물속에서 더위를 식히는 모습은 한국의 여름을 향한 겸손하고도 즐거운 응답이었다. 시간을 훌쩍 뛰어넘어 2026년 여름, 어느 박물관 광장 밖 풍경을 보자 — 더위와 맺었던 그 소박한 관계는 이제 사라지고 없다. 이제는 모든 방문객이 건물 가장자리를 따라 좁게 드리운 그늘 속으로 떠밀려 들어간다. 더위가 군중에게 작지만 강제적인 안무를 지시하고 있는 셈이다. 오늘날 그늘은 더 이상 우연이 아니라, 사람들이 자신의 동선을 계획해야 하는 하나의 인프라가 되었다 — 밤이 되어도 더 이상 쉼을 주지 않기 때문이다.\n\n이는 무엇보다 밤이 더는 휴식을 허락하지 않기 때문이다. 2024년 한국은 전국 평균 20.2일의 열대야를 기록했는데, 이는 역대 평균의 세 배가 넘는 수치다. 이는 극심한 습도로 인해 인체가 밤사이 제대로 회복하지 못한다는 뜻이다. 이 끊임없는 열 스트레스는 2025년 한계점에 다다랐고, 온열질환으로 응급실을 찾은 사람이 4,460명에 달했다. 이는 관측이 시작된 2011년 이래 두 번째로 높은 수치로, 역대 최악이었던 2018년(4,526명)의 뒤를 바짝 좇는다."
+        },
+        "nl": {
+          "desc": "Hittegolf\n\nOp een foto uit 1961 koelt een gezin zich af in een eenvoudige teil water — een bescheiden en vrolijke reactie op de Koreaanse zomer. Spoel vooruit naar de zomer van 2026, buiten een museumplein, en die simpele omgang met hitte is verdwenen: elke bezoeker wordt nu gedwongen tot een smalle strook schaduw langs de rand van het gebouw. Hitte legt de menigte een kleine, onvrijwillige choreografie op. Schaduw is tegenwoordig zelf infrastructuur geworden, waar mensen hun bewegingen op moeten afstemmen — vooral omdat ook de nacht geen verlichting meer biedt.\n\nDit komt vooral doordat de nacht geen verkoeling meer brengt. In 2024 telde Korea landelijk gemiddeld 20,2 tropische nachten, meer dan drie keer de historische norm, wat betekent dat de intense vochtigheid het lichaam belet om 's nachts te herstellen. Deze aanhoudende hittestress bereikte in 2025 een kookpunt: 4.460 mensen belandden op de spoedeisende hulp met hittegerelateerde klachten. Dat is het op één na hoogste aantal sinds de metingen begonnen in 2011, net achter de catastrofale zomer van 2018 (4.526 patiënten)."
+        }
+      }
+    },
+    {
+      "id": "context-07",
+      "type": "context",
+      "x": 54.59,
+      "y": 39.03,
+      "w": 6,
+      "h": 12.76,
+      "number": "c-11",
+      "source": "Source: Korea Meteorological Administration (KMA); Korea Environment Institute; Seoul urban drainage research (University of Seoul)",
+      "relatedArtworkIds": [
+        "artwork-08",
+        "artwork-06"
+      ],
+      "relatedContextIds": [],
+      "i18n": {
+        "en": {
+          "desc": "Rainstorms\n\nIn Korea, rain no longer falls the way it used to. The steady, predictable monsoon rains (Jangma) that once gently watered the land across the season have given a way to short, violent bursts of downpourts. Historical records show that Korea’s annual average rainfall rose by 19% from 1,155.6 mm in the 1910s to 1,375.4 mm in the 2000s.\n\nMore importantly, though, is the rising intensity. Nationwide happenings of extreme rain days that exceed 100 mm within 24 hours, surged from 222 events during the 1970s-1980s to 385 events in the most recent decade."
+        },
+        "ko": {
+          "desc": "장맛비\n\n한국에서 비는 더 이상 예전 방식으로 내리지 않는다. 계절 내내 땅을 부드럽게 적셔주던 예측 가능한 장마는, 이제 짧고 격렬한 폭우로 그 자리를 대신하고 있다. 역대 기록을 보면, 한국의 연평균 강수량은 1910년대의 1,155.6mm에서 2000년대에는 1,375.4mm로 19% 증가했다.\n\n하지만 더 중요한 것은 그 강도다. 24시간 동안 100mm를 넘는 극한 폭우가 발생한 횟수는, 1970~80년대의 222건에서 최근 10년 사이 385건으로 급증했다."
+        },
+        "nl": {
+          "desc": "Regenbuien\n\nIn Korea valt de regen niet meer zoals vroeger. De gestage, voorspelbare moessonregens (jangma) die het land ooit het hele seizoen zachtjes drenkten, hebben plaatsgemaakt voor korte, hevige stortbuien. Historische gegevens laten zien dat de gemiddelde jaarlijkse neerslag in Korea met 19% steeg: van 1.155,6 mm in de jaren 1910 naar 1.375,4 mm in de jaren 2000.\n\nBelangrijker nog is de toenemende intensiteit. Het aantal keren dat er landelijk binnen 24 uur meer dan 100 mm regen viel, steeg van 222 gevallen in de jaren zeventig en tachtig naar 385 gevallen in het meest recente decennium."
+        }
+      }
+    },
+    {
+      "id": "context-08",
+      "type": "context",
+      "x": 48.31,
+      "y": 19.71,
+      "w": 6,
+      "h": 18.53,
+      "number": "c-4",
+      "source": "",
+      "relatedArtworkIds": [
+        "artwork-10",
+        "artwork-11"
+      ],
+      "relatedContextIds": [
+        "c-3"
+      ],
+      "i18n": {
+        "en": {
+          "desc": "During the extreme heatwave, the perilla leaves on the balcony in the Netherlands were scorched. While these leaves can usually handle temperatures up to 30-35 °C, the record-breaking temperatures were far more than enough to burn them, despite being watered multiple times a day.\n\nAt the same time, supermarket shelves and refrigerators across the country were completely emptied. This was a natural panic response from customers looking to either stock up for an unknown emergency and, most importantly, to cool themselves down. This shortage highlights a broader issue beyond the burnt plants. Heat does not just endanger bodies, but it also strains the systems that keep people fed and cool.\n\nBetween June 22 and July 5, 2026, the Dutch public health institute, RIVM (Rijksinstituut voor Volksgezondheid en Milieu), recorded over 900 heatwave-related excess deaths. Most of the victims were over 80 and lived in the hardest-hit southern and eastern regions of the Netherlands."
+        },
+        "ko": {
+          "desc": "극심한 폭염이 이어지는 동안, 네덜란드 발코니에서 기르던 깻잎은 결국 타버렸다. 깻잎은 보통 30~35°C까지는 견뎌내지만, 이번 폭염은 그 기록적인 더위로 하루에 몇 번씩 물을 줘도 감당할 수 없을 만큼 강했다.\n\n같은 시기, 전국 슈퍼마켓의 진열대와 냉장고는 완전히 텅 비었다. 이는 알 수 없는 비상 상황에 대비해 물건을 쟁여두려는, 그리고 무엇보다 스스로를 시원하게 유지하려는 소비자들의 자연스러운 공포 반응이었다. 이런 물자 부족 현상은 타버린 식물 하나로 끝나는 문제가 아니라는 것을 보여준다. 더위는 단지 몸을 위협하는 데 그치지 않고, 사람들을 먹이고 식히는 시스템 자체를 압박한다.\n\n2026년 6월 22일부터 7월 5일까지, 네덜란드 국립보건환경연구원(RIVM)은 폭염과 관련된 초과 사망자를 900명 이상 기록했다. 희생자 대부분은 80세 이상이었으며, 피해가 가장 컸던 남부와 동부 지역에 거주하고 있었다."
+        },
+        "nl": {
+          "desc": "Tijdens de extreme hittegolf verschroeiden de perillablaadjes op het Nederlandse balkon uiteindelijk toch. Normaal gesproken kunnen deze bladeren temperaturen tot 30–35°C aan, maar de recordhitte van deze zomer was, ondanks meerdere keren water geven per dag, simpelweg te veel.\n\nTegelijkertijd raakten de schappen en koelkasten van supermarkten door het hele land compleet leeg. Dit was een natuurlijke paniekreactie van klanten die zich wilden indekken tegen een onbekende noodsituatie, en vooral zichzelf wilden afkoelen. Dit tekort laat zien dat het probleem verder reikt dan verschroeide planten alleen: hitte bedreigt niet alleen lichamen, maar zet ook de systemen onder druk die mensen van eten voorzien en koel houden.\n\nTussen 22 juni en 5 juli 2026 registreerde het RIVM meer dan 900 extra sterfgevallen die verband hielden met de hittegolf. De meeste slachtoffers waren ouder dan 80 en woonden in de zwaarst getroffen zuidelijke en oostelijke regio's van Nederland."
+        }
+      }
+    },
+    {
+      "id": "context-09",
+      "type": "context",
+      "x": 48.31,
+      "y": 9.12,
+      "w": 6,
+      "h": 9.69,
+      "number": "c-3",
+      "source": "Source: KNMI, RIVM (Rijksinstituut voor Volksgezondheid en Milieu)",
+      "relatedArtworkIds": [],
+      "relatedContextIds": [
+        "c-4"
+      ],
+      "i18n": {
+        "en": {
+          "desc": "Phase 1: Heatwave\n\nIf you were here during this summer, you are probably aware of the record-breaking heatwave that took over the entirety of Europe. The average temperature in the Netherlands reached 19.3°C this summer. This is significantly higher than the long-term norm of 17.5°C, making this summer the warmest summer ever since the Dutch weather records began in 1901.\n\nOn June 26, temperatures reached a reco rd 39.4°C in Ell, a small town in Limburg, located in the south of the Netherlands. This led the national weather service to issue its first-ever Code Red for heat."
+        },
+        "ko": {
+          "desc": "1단계: 폭염\n\n이곳에서 이번 여름을 보내셨다면, 유럽 전역을 뒤덮은 기록적인 폭염을 아마 기억하실 것이다. 네덜란드의 올여름 평균 기온은 19.3°C까지 올랐다. 이는 장기 평균인 17.5°C를 크게 웃도는 수치로, 1901년 네덜란드 기상 관측이 시작된 이래 가장 더운 여름으로 기록되었다.\n\n6월 26일에는 네덜란드 남부 림뷔르흐주의 작은 마을 엘(Ell)에서 기온이 39.4°C까지 치솟았다. 이는 국가 기상청이 사상 처음으로 폭염 적색경보를 발령하게 만든 계기가 되었다."
+        },
+        "nl": {
+          "desc": "Fase 1: Hittegolf\n\nAls u hier deze zomer was, kent u waarschijnlijk de recordbrekende hittegolf die heel Europa in zijn greep hield. De gemiddelde temperatuur in Nederland kwam deze zomer uit op 19,3°C. Dat ligt ruim boven de langjarige norm van 17,5°C, waarmee dit de warmste zomer werd sinds het begin van de Nederlandse weermetingen in 1901.\n\nOp 26 juni werd in Ell, een klein dorp in Limburg in het zuiden van Nederland, een recordtemperatuur van 39,4°C gemeten. Dit was voor het KNMI aanleiding om voor het eerst ooit code rood voor hitte af te kondigen."
+        }
+      }
+    },
+    {
+      "id": "context-10",
+      "type": "context",
+      "x": 34.31,
+      "y": 23.3,
+      "w": 6,
+      "h": 12.76,
+      "number": "c-5",
+      "source": "",
+      "relatedArtworkIds": [
+        "artwork-22",
+        "artwork-16",
+        "artwork-12"
+      ],
+      "relatedContextIds": [],
+      "i18n": {
+        "en": {
+          "desc": "Phase 2: False Autumn\n\nOn August 16, 2026, temperatures dropped to 19°C in the northwest and 24–25°C in the southeast regions of the Netherlands. This sudden cool-down, driven by a jet stream shift that pulled an unusual cold front across Europe, followed weeks of extreme heat. Suddenly, despite it being mid-August, people were swapping short sleeves for thick jackets. Again, in 19xx, it was not like that; maybe a few swings, but not as intense as now. People could still enjoy their time at the beach without feeling too cold.\n\nHowever, this late-summer chill wasn’t the first time the weather had defied expectations. Just three weeks after the record-breaking heat of June 26, the ground in Twente froze on the night of July 21. It marked the first time in Dutch recorded history that ground frost had occurred in July. These fluctuations in weather illustrate that the variance within a single season is expanding, rather than just the long-term averages."
+        },
+        "ko": {
+          "desc": "2단계: 가짜 가을\n\n2026년 8월 16일, 네덜란드 북서부 지역 기온이 19°C까지, 남동부 지역은 24~25°C까지 떨어졌다. 제트기류의 이동으로 유럽 전역에 이례적인 한랭전선이 유입되면서 생긴 이 급격한 기온 하강은, 몇 주간 이어진 극심한 더위 끝에 찾아왔다. 8월 중순이라는 게 믿기지 않을 만큼, 사람들은 반팔 옷을 벗고 두꺼운 재킷을 꺼내 입기 시작했다. 과거에도 이런 일이 없었던 건 아니지만, 몇 차례의 잠깐의 변덕 정도였지 지금처럼 강렬하지는 않았다. 그때는 사람들이 크게 춥다는 느낌 없이 해변에서 시간을 보낼 수 있었다.\n\n하지만 이 늦여름 한파가 날씨의 기대를 완전히 뒤엎은 첫 사례는 아니었다. 6월 26일의 기록적인 더위로부터 불과 3주 뒤인 7월 21일 밤, 트벤터(Twente) 지역의 지면이 얼어붙었다. 이는 네덜란드 기상 관측 역사상 7월에 지면 서리가 발생한 최초의 기록이었다. 이러한 널뛰는 날씨는 하나의 계절 안에서조차 변동 폭이 커지고 있다는 것을 보여준다 — 단지 장기 평균이 변하는 것만이 문제가 아니다."
+        },
+        "nl": {
+          "desc": "Fase 2: Valse herfst\n\nOp 16 augustus 2026 daalde de temperatuur in het noordwesten van Nederland naar 19°C en in het zuidoosten naar 24–25°C. Deze plotselinge afkoeling, veroorzaakt door een verschuiving in de straalstroom die een ongewoon koufront over Europa trok, volgde op weken van extreme hitte. Ineens, ondanks dat het pas half augustus was, ruilden mensen hun korte mouwen in voor dikke jassen. Ook vroeger was het weleens anders, met misschien een enkele uitschieter, maar nooit zo heftig als nu. Mensen konden toen nog gewoon van het strand genieten zonder het te koud te vinden.\n\nDeze late-zomerse kou was echter niet de eerste keer dat het weer de verwachtingen tartte. Slechts drie weken na de recordhitte van 26 juni bevroor de grond in Twente in de nacht van 21 juli. Dit was de eerste keer in de Nederlandse gemeten geschiedenis dat grondvorst in juli voorkwam. Deze schommelingen laten zien dat niet alleen de langjarige gemiddelden verschuiven, maar dat ook de spreiding binnen één enkel seizoen groter wordt."
+        }
+      }
+    },
+    {
+      "id": "context-11",
+      "type": "context",
+      "x": 27.97,
+      "y": 18.81,
+      "w": 6,
+      "h": 17.26,
+      "number": "c-6",
+      "source": "Source: KNMI, NOS",
+      "relatedArtworkIds": [
+        "artwork-26",
+        "artwork-14",
+        "artwork-13",
+        "artwork-15"
+      ],
+      "relatedContextIds": [],
+      "i18n": {
+        "en": {
+          "desc": "By mid-August 2026, leaves in the Netherlands were already turning red and falling due to a severe lack of rain. As a result, we have received three different photographs addressing this issue. In July 1984, the grass and the trees were still full of green.\n\nSummer 2026 brought just 170 mm of rainfall, far below the usual 240 mm norm. July was particularly dry with just 15 mm (normally 78 mm), and the first ten days of August recorded a negligible 0.4 mm. By late August, the national rainfall deficit reached 285 mm, making 2026 one of the top 5% driest years on record, almost matching the historic 1976 drought. \n\nIn response, trees began shedding their leaves and fruits early as a desperate survival mechanism, rather than a seasonal transition. The Dutch call this phenomenon nepherfst, ‘false autumn’. This pattern has now repeated in 2018, 2019, 2022, 2023, 2025, and 2026. By now, Dutch scientists emphasize that this is no longer an anomaly, but rather a major climatic shift."
+        },
+        "ko": {
+          "desc": "2026년 8월 중순 무렵, 네덜란드에서는 심각한 강수 부족으로 나뭇잎이 벌써 붉게 물들어 떨어지기 시작했다. 이 문제를 다루기 위해 우리는 서로 다른 세 장의 사진을 받았다. 1984년 7월에는 잔디와 나무가 여전히 푸르름으로 가득했다.\n\n2026년 여름 강수량은 평년 240mm에 크게 못 미치는 170mm에 그쳤다. 7월은 평년 78mm에 비해 단 15mm에 불과할 만큼 유독 건조했고, 8월 첫 열흘 동안의 강수량은 0.4mm라는, 있으나 마나 한 수준이었다. 8월 말까지 전국 강수 부족량은 285mm에 달했고, 이는 2026년을 역대 최상위 5% 안에 드는 건조한 해로 만들었다 — 1976년의 역사적인 가뭄에 거의 근접하는 수치다.\n\n이에 대응하듯, 나무들은 계절의 자연스러운 전환이 아니라 절박한 생존 수단으로 잎과 열매를 일찍 떨구기 시작했다. 네덜란드 사람들은 이 현상을 '넵헤르프스트(nepherfst)', 즉 '가짜 가을'이라 부른다. 이 패턴은 2018년, 2019년, 2022년, 2023년, 2025년, 그리고 2026년까지 이미 여러 차례 반복되었다. 이제 네덜란드 과학자들은 이것이 더 이상 예외적인 현상이 아니라, 중대한 기후적 전환이라는 점을 강조하고 있다."
+        },
+        "nl": {
+          "desc": "Tegen half augustus 2026 verkleurden en vielen de bladeren in Nederland al door een ernstig gebrek aan regen. Naar aanleiding hiervan ontvingen we drie verschillende foto's die dit probleem in beeld brengen. In juli 1984 stonden gras en bomen nog volop in het groen.\n\nZomer 2026 bracht slechts 170 mm neerslag, ver onder de gebruikelijke norm van 240 mm. Juli was bijzonder droog met maar 15 mm (normaal 78 mm), en in de eerste tien dagen van augustus viel een verwaarloosbare 0,4 mm. Tegen eind augustus liep het landelijke neerslagtekort op tot 285 mm, waarmee 2026 een van de 5% droogste jaren ooit gemeten werd — bijna net zo droog als de historische droogte van 1976.\n\nAls reactie hierop begonnen bomen vervroegd hun bladeren en vruchten af te werpen, niet als een natuurlijke seizoensovergang maar als een wanhopig overlevingsmechanisme. In Nederland noemt men dit verschijnsel 'nepherfst'. Dit patroon heeft zich inmiddels herhaald in 2018, 2019, 2022, 2023, 2025 en 2026. Nederlandse wetenschappers benadrukken dan ook dat dit geen incident meer is, maar een ingrijpende klimaatverschuiving."
+        }
+      }
+    },
+    {
+      "id": "context-12",
+      "type": "context",
+      "x": 13.77,
+      "y": 31.25,
+      "w": 6,
+      "h": 19.6,
+      "number": "c-13",
+      "source": "Source: Korea Forest Service, National Arboretum autumn foliage observation data; Seoul National University Graduate School of Environmental Studies",
+      "relatedArtworkIds": [
+        "artwork-18",
+        "artwork-27",
+        "artwork-02"
+      ],
+      "relatedContextIds": [],
+      "i18n": {
+        "en": {
+          "desc": "Autumn is Arriving Late, while Winter is Arriving on Time\n\nHistorically, late November in Korea meant bare branches, with winter snow arriving only after autumn had cleanly left. These photographs capture a broken timeline: snow piling on top of branches that are still stubbornly wearing fresh autumn colors. A generation ago, the landscape would have looked entirely ready for the freeze. Today, this overlapping of seasons serves as a stark witness to a warming planet.\n\nThe metrics behind this delay are undeniable. Data compiled since 2009 shows that Korea’s peak foliage date has been shifting later by 0.4 days every year, with every 1°C increase in summer heat delaying autumn foliage by an additional 1.5 days. In 2021, this climatic drift delayed peak autumn colors on Mt. Seorak and Mt. Jiri by 9 days, and Mt. Bukhan by 4 days—fundamentally altering the natural rhythms of the Korean peninsula."
+        },
+        "ko": {
+          "desc": "가을은 늦게 오고, 겨울은 제때 온다\n\n역사적으로 한국의 늦은 11월은 앙상한 나뭇가지를 의미했다 — 가을이 완전히 물러간 뒤에야 비로소 겨울눈이 내리곤 했다. 하지만 이 사진들은 어긋나버린 시간표를 그대로 담고 있다: 여전히 고집스럽게 가을빛을 띠고 있는 나뭇가지 위로 눈이 쌓이는 모습이다. 한 세대 전이었다면 그 풍경은 완전히 겨울을 맞이할 준비가 되어 있었을 것이다. 지금 이 계절의 겹침은, 뜨거워지는 지구를 보여주는 뚜렷한 증거로 남는다.\n\n이 지연을 뒷받침하는 수치는 명확하다. 2009년부터 축적된 자료에 따르면, 한국의 단풍 절정 시기는 매년 0.4일씩 늦춰지고 있으며, 여름철 기온이 1°C 오를 때마다 단풍이 드는 시기는 추가로 1.5일씩 지연된다. 2021년에는 이 기후적 변화로 인해 설악산과 지리산의 단풍 절정이 9일, 북한산은 4일이나 늦춰졌다 — 한반도의 자연스러운 계절 리듬이 근본적으로 바뀌고 있는 것이다."
+        },
+        "nl": {
+          "desc": "De herfst komt laat, de winter komt op tijd\n\nHistorisch gezien betekende eind november in Korea kale takken: pas nadat de herfst volledig was vertrokken, viel de eerste wintersneeuw. Deze foto's leggen echter een verstoorde tijdlijn vast: sneeuw die zich ophoopt op takken die koppig hun frisse herfstkleuren blijven dragen. Een generatie geleden had het landschap er volledig winterklaar uitgezien. Vandaag getuigt deze overlapping van seizoenen op een schrijnende manier van een opwarmende planeet.\n\nDe cijfers achter deze vertraging liegen er niet om. Gegevens die sinds 2009 zijn verzameld, laten zien dat de piek van het herfstblad in Korea elk jaar 0,4 dagen later valt, waarbij elke stijging van 1°C in de zomerhitte de herfstkleuring nog eens 1,5 dag extra vertraagt. In 2021 zorgde deze klimaatverschuiving ervoor dat de piek van de herfstkleuren op de bergen Seorak en Jiri met 9 dagen werd uitgesteld, en op de berg Bukhan met 4 dagen — een fundamentele verandering van het natuurlijke ritme van het Koreaanse schiereiland."
+        }
+      }
+    },
+    {
+      "id": "context-13",
+      "type": "context",
+      "x": 1.86,
+      "y": 52.05,
+      "w": 6,
+      "h": 11.21,
+      "number": "c-7",
+      "source": "",
+      "relatedArtworkIds": [
+        "artwork-28"
+      ],
+      "relatedContextIds": [],
+      "i18n": {
+        "en": {
+          "desc": "Since 1909, the Dutch province of Friesland has been home to the Elfstedentocht, a legendary 200 km speed-skating race across naturally frozen canals. For the event to take place, the entire route requires an ice thickness of at least 15 cm. In the early 20th century, nature complied roughly once every five years.\n\nToday, however, rising temperatures have changed the game. With average Dutch winter temperatures up by about 2°C, the KNMI and the Netherlands Environmental Assessment Agency (PBL) now estimate the odds of the race happening at just 8% in any given year. In fact, the race has been held only three times in the last 50 years, with the most recent edition dating back to 1997."
+        },
+        "ko": {
+          "desc": "1909년부터 네덜란드 프리슬란트주는 엘프스테덴토흐트(Elfstedentocht)의 고향이었다 — 자연적으로 얼어붙은 운하 위를 달리는, 총 200km에 달하는 전설적인 스피드스케이팅 대회다. 이 대회가 열리려면 코스 전체의 얼음 두께가 최소 15cm는 되어야 한다. 20세기 초에는 자연이 대략 5년에 한 번꼴로 이 조건을 충족해주었다.\n\n하지만 오늘날에는 기온 상승이 판도를 완전히 바꿔놓았다. 네덜란드 평균 겨울 기온이 약 2°C 상승하면서, 네덜란드 왕립기상연구소(KNMI)와 네덜란드 환경평가청(PBL)은 이제 이 대회가 어느 해든 열릴 확률을 단 8%로 추산하고 있다. 실제로 지난 50년 동안 이 대회는 단 세 번만 열렸으며, 가장 최근 대회는 1997년이었다."
+        },
+        "nl": {
+          "desc": "Sinds 1909 is de Friese provincie de bakermat van de Elfstedentocht — de legendarische schaatstocht van 200 kilometer over natuurlijk bevroren vaarwegen. Om de tocht te laten doorgaan, moet het ijs over de hele route minstens 15 cm dik zijn. Begin twintigste eeuw voldeed de natuur hier ongeveer eens in de vijf jaar aan.\n\nTegenwoordig heeft de stijgende temperatuur de zaak echter drastisch veranderd. Doordat de gemiddelde Nederlandse wintertemperatuur met zo'n 2°C is gestegen, schatten het KNMI en het Planbureau voor de Leefomgeving (PBL) de kans dat de tocht in een willekeurig jaar doorgaat nu op slechts 8%. In de afgelopen vijftig jaar is de tocht dan ook maar drie keer verreden, voor het laatst in 1997."
+        }
+      }
+    },
+    {
+      "id": "context-14",
+      "type": "context",
+      "x": 1.86,
+      "y": 72.53,
+      "w": 6,
+      "h": 21.8,
+      "number": "c-8",
+      "source": "Source: KNMI, PBL, Visser & Petersen, NL Times",
+      "relatedArtworkIds": [
+        "artwork-20",
+        "artwork-19"
+      ],
+      "relatedContextIds": [],
+      "i18n": {
+        "en": {
+          "desc": "January 2026: An Exceptional Snowstorm\n\nEven as extreme cold and snow become increasingly rare, January 2026 brought an unusually persistent, six-day snowfall. The storm paused fresh food deliveries for major supermarket chains like Albert Heijn, Jumbo, etc., emptying shelves of dairy, meat, and produce. Some places also experienced panic-buying that even outpaced the Christmas season. \n\nTwo of these things should stay separated: First, the long-term decline in extreme cold and heavy snow in the Netherlands is a documented statistical fact, backed by decades of KNMI records.  Second, the January 2026 winter storm is not, on its own, definitive proof of climate change, as a single weather event can always happen independently of a long-term trend. \n\nYet, the trend and the event are profoundly connected. As extreme winter weather fades into memory, society slowly loses the infrastructure and habits built to manage it. A snowfall that would have been routine a generation ago can now suspend a nation’s supply chain. Where ice and snow once ruled, we are left with a society that simply forgot how to prepare for them. I mean remember the chaos back then?"
+        },
+        "ko": {
+          "desc": "2026년 1월: 이례적인 눈보라\n\n극한의 추위와 폭설이 점점 더 드물어지고 있는 요즘, 2026년 1월은 이례적으로 6일간이나 눈이 계속 내리는 지속적인 눈보라를 몰고 왔다. 이 폭풍으로 알버트 하인(Albert Heijn), 점보(Jumbo) 같은 주요 슈퍼마켓 체인의 신선식품 배송이 중단되면서 유제품, 육류, 농산물 진열대가 텅 비었다. 일부 지역에서는 크리스마스 시즌마저 능가하는 사재기 현상까지 벌어졌다.\n\n여기서 두 가지는 구분해서 봐야 한다. 첫째, 네덜란드에서 극한의 추위와 폭설이 장기적으로 줄어들고 있다는 것은 수십 년치 KNMI 기록이 뒷받침하는 통계적 사실이다. 둘째, 2026년 1월의 겨울 폭풍 그 자체는 기후변화를 결정적으로 증명하는 증거는 아니다 — 단발적인 기상 현상은 장기적 추세와 무관하게 언제든 일어날 수 있기 때문이다.\n\n그럼에도 이 추세와 사건은 깊이 맞닿아 있다. 극한의 겨울 날씨가 기억 속으로 사라져 갈수록, 사회는 그것에 대비하기 위해 갖추어 두었던 기반시설과 습관을 서서히 잃어간다. 한 세대 전이었다면 그저 일상이었을 눈보라 하나가, 이제는 한 나라의 물류 공급망을 멈춰 세울 수 있다. 얼음과 눈이 지배하던 자리에는, 그것에 대비하는 법을 그저 잊어버린 사회만이 남아 있다. 그때의 그 혼란을 아직 기억하시는지?"
+        },
+        "nl": {
+          "desc": "Januari 2026: een uitzonderlijke sneeuwstorm\n\nTerwijl extreme kou en zware sneeuwval steeds zeldzamer worden, bracht januari 2026 een ongewoon aanhoudende sneeuwval van zes dagen. De storm legde de verse voedselleveringen aan grote supermarktketens zoals Albert Heijn en Jumbo tijdelijk stil, waardoor de schappen met zuivel, vlees en groente leeg raakten. Op sommige plekken ontstond zelfs hamstergedrag dat de drukte rond kerst overtrof.\n\nTwee dingen moeten hier gescheiden blijven: ten eerste is de langetermijnafname van extreme kou en zware sneeuwval in Nederland een gedocumenteerd statistisch feit, onderbouwd door decennia aan KNMI-gegevens. Ten tweede is de winterstorm van januari 2026 op zichzelf geen sluitend bewijs van klimaatverandering, want een op zichzelf staande weersgebeurtenis kan altijd los van een langetermijntrend plaatsvinden.\n\nToch hangen de trend en de gebeurtenis nauw met elkaar samen. Naarmate extreem winterweer wegzakt in het collectieve geheugen, verliest de samenleving langzaam de infrastructuur en gewoontes die ooit waren opgebouwd om ermee om te gaan. Een sneeuwbui die een generatie geleden doodgewoon zou zijn geweest, kan nu de aanvoerketen van een heel land platleggen. Waar ijs en sneeuw ooit de dienst uitmaakten, blijft nu een samenleving over die simpelweg is vergeten hoe ze zich erop moet voorbereiden. Herinnert u zich de chaos van toen nog?"
+        }
+      }
+    },
+    {
+      "id": "artwork-31",
+      "type": "artwork",
+      "x": 78.71,
+      "y": 27.43,
+      "w": 8,
+      "h": 27.41,
+      "number": "a-1",
+      "photo": "/exhibition/photos/a-1.jpg",
+      "country": "NL",
+      "season": "Spring",
+      "photographer": "Poll, Willem van de",
+      "date": "1932",
+      "pastPresent": "Past",
+      "i18n": {
+        "ko": {
+          "title": "",
+          "desc": ""
+        },
+        "en": {
+          "title": "",
+          "desc": ""
+        },
+        "nl": {
+          "title": "Bloeiende fruitboom in de Betuwe met Van der Polls stiefdochters Hans en Renée",
+          "desc": ""
+        }
+      }
+    }
+  ]
+}

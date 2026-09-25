@@ -1,0 +1,380 @@
+[
+  {
+    "id": "artwork-01",
+    "type": "artwork",
+    "label": "",
+    "x": 83.34,
+    "y": 56.52,
+    "w": 4,
+    "h": 13.7
+  },
+  {
+    "id": "artwork-02",
+    "type": "artwork",
+    "label": "",
+    "x": 78.71,
+    "y": 56.52,
+    "w": 4,
+    "h": 13.7
+  },
+  {
+    "id": "artwork-03",
+    "type": "artwork",
+    "label": "",
+    "x": 88.63,
+    "y": 24.39,
+    "w": 4,
+    "h": 13.7
+  },
+  {
+    "id": "artwork-04",
+    "type": "artwork",
+    "label": "",
+    "x": 74.07,
+    "y": 32.93,
+    "w": 4,
+    "h": 13.7
+  },
+  {
+    "id": "artwork-05",
+    "type": "artwork",
+    "label": "",
+    "x": 60.8,
+    "y": 31.18,
+    "w": 4,
+    "h": 13.7
+  },
+  {
+    "id": "artwork-06",
+    "type": "artwork",
+    "label": "",
+    "x": 65.44,
+    "y": 31.24,
+    "w": 4,
+    "h": 13.7
+  },
+  {
+    "id": "artwork-07",
+    "type": "artwork",
+    "label": "",
+    "x": 54.59,
+    "y": 53.15,
+    "w": 4,
+    "h": 13.7
+  },
+  {
+    "id": "artwork-08",
+    "type": "artwork",
+    "label": "",
+    "x": 50,
+    "y": 53.15,
+    "w": 4,
+    "h": 13.7
+  },
+  {
+    "id": "artwork-09",
+    "type": "artwork",
+    "label": "",
+    "x": 50,
+    "y": 39.03,
+    "w": 4,
+    "h": 13.7
+  },
+  {
+    "id": "artwork-10",
+    "type": "artwork",
+    "label": "",
+    "x": 44.1,
+    "y": 7.08,
+    "w": 4,
+    "h": 13.7
+  },
+  {
+    "id": "artwork-11",
+    "type": "artwork",
+    "label": "",
+    "x": 44.1,
+    "y": 22.36,
+    "w": 4,
+    "h": 13.7
+  },
+  {
+    "id": "artwork-12",
+    "type": "artwork",
+    "label": "",
+    "x": 35.63,
+    "y": 39.03,
+    "w": 4,
+    "h": 13.7
+  },
+  {
+    "id": "artwork-13",
+    "type": "artwork",
+    "label": "",
+    "x": 30.97,
+    "y": 39.03,
+    "w": 4,
+    "h": 13.7
+  },
+  {
+    "id": "artwork-14",
+    "type": "artwork",
+    "label": "",
+    "x": 26.31,
+    "y": 39.03,
+    "w": 4,
+    "h": 13.7
+  },
+  {
+    "id": "artwork-15",
+    "type": "artwork",
+    "label": "",
+    "x": 21.76,
+    "y": 39.03,
+    "w": 4,
+    "h": 13.7
+  },
+  {
+    "id": "artwork-16",
+    "type": "artwork",
+    "label": "",
+    "x": 33.97,
+    "y": 53.15,
+    "w": 5.66,
+    "h": 9.69
+  },
+  {
+    "id": "artwork-17",
+    "type": "artwork",
+    "label": "",
+    "x": 9.5,
+    "y": 31.24,
+    "w": 4,
+    "h": 13.7
+  },
+  {
+    "id": "artwork-18",
+    "type": "artwork",
+    "label": "",
+    "x": 4.86,
+    "y": 31.24,
+    "w": 4,
+    "h": 13.7
+  },
+  {
+    "id": "artwork-19",
+    "type": "artwork",
+    "label": "",
+    "x": 12.75,
+    "y": 73.14,
+    "w": 4,
+    "h": 13.7
+  },
+  {
+    "id": "artwork-20",
+    "type": "artwork",
+    "label": "",
+    "x": 8.11,
+    "y": 73.14,
+    "w": 4,
+    "h": 13.7
+  },
+  {
+    "id": "",
+    "type": "artwork",
+    "label": "",
+    "x": 78.71,
+    "y": 27.43,
+    "w": 8,
+    "h": 27.41
+  },
+  {
+    "id": "artwork-22",
+    "type": "artwork",
+    "label": "",
+    "x": 40.31,
+    "y": 39.03,
+    "w": 8,
+    "h": 27.41
+  },
+  {
+    "id": "artwork-23",
+    "type": "artwork",
+    "label": "",
+    "x": 60.8,
+    "y": 1.8,
+    "w": 8,
+    "h": 27.41
+  },
+  {
+    "id": "artwork-24",
+    "type": "artwork",
+    "label": "",
+    "x": 81.32,
+    "y": 4.24,
+    "w": 11.31,
+    "h": 19.38
+  },
+  {
+    "id": "artwork-25",
+    "type": "artwork",
+    "label": "",
+    "x": 87.94,
+    "y": 50.85,
+    "w": 11.31,
+    "h": 19.38
+  },
+  {
+    "id": "artwork-26",
+    "type": "artwork",
+    "label": "",
+    "x": 21.76,
+    "y": 53.15,
+    "w": 11.31,
+    "h": 19.38
+  },
+  {
+    "id": "artwork-27",
+    "type": "artwork",
+    "label": "",
+    "x": 8.11,
+    "y": 9.83,
+    "w": 11.31,
+    "h": 19.38
+  },
+  {
+    "id": "artwork-28",
+    "type": "artwork",
+    "label": "",
+    "x": 8.11,
+    "y": 51.79,
+    "w": 11.31,
+    "h": 19.38
+  },
+  {
+    "id": "context-02",
+    "type": "context",
+    "label": "",
+    "x": 93.26,
+    "y": 24.27,
+    "w": 6,
+    "h": 13.82
+  },
+  {
+    "id": "context-03",
+    "type": "context",
+    "label": "",
+    "x": 72.07,
+    "y": 47.57,
+    "w": 6,
+    "h": 8.95
+  },
+  {
+    "id": "context-04",
+    "type": "context",
+    "label": "",
+    "x": 72.07,
+    "y": 57.06,
+    "w": 6,
+    "h": 9.8
+  },
+  {
+    "id": "context-05",
+    "type": "context",
+    "label": "",
+    "x": 72.07,
+    "y": 67.49,
+    "w": 6,
+    "h": 12.5
+  },
+  {
+    "id": "context-06",
+    "type": "context",
+    "label": "",
+    "x": 54.59,
+    "y": 19.71,
+    "w": 6,
+    "h": 18.38
+  },
+  {
+    "id": "context-07",
+    "type": "context",
+    "label": "",
+    "x": 54.59,
+    "y": 39.03,
+    "w": 6,
+    "h": 12.76
+  },
+  {
+    "id": "context-08",
+    "type": "context",
+    "label": "",
+    "x": 48.31,
+    "y": 19.71,
+    "w": 6,
+    "h": 18.53
+  },
+  {
+    "id": "context-09",
+    "type": "context",
+    "label": "",
+    "x": 48.31,
+    "y": 9.12,
+    "w": 6,
+    "h": 9.69
+  },
+  {
+    "id": "context-10",
+    "type": "context",
+    "label": "",
+    "x": 34.31,
+    "y": 23.3,
+    "w": 6,
+    "h": 12.76
+  },
+  {
+    "id": "context-11",
+    "type": "context",
+    "label": "",
+    "x": 27.97,
+    "y": 18.81,
+    "w": 6,
+    "h": 17.26
+  },
+  {
+    "id": "context-12",
+    "type": "context",
+    "label": "",
+    "x": 13.77,
+    "y": 31.25,
+    "w": 6,
+    "h": 19.6
+  },
+  {
+    "id": "context-13",
+    "type": "context",
+    "label": "",
+    "x": 1.86,
+    "y": 52.05,
+    "w": 6,
+    "h": 11.21
+  },
+  {
+    "id": "context-14",
+    "type": "context",
+    "label": "",
+    "x": 1.86,
+    "y": 72.53,
+    "w": 6,
+    "h": 21.8
+  },
+  {
+    "id": "artwork-31",
+    "type": "artwork",
+    "label": "",
+    "x": 78.71,
+    "y": 27.43,
+    "w": 8,
+    "h": 27.41
+  }
+]
